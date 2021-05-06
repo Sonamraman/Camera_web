@@ -27,7 +27,7 @@ import ViewComfyIcon from "@material-ui/icons/ViewComfy";
 import PersonIcon from "@material-ui/icons/Person";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
 import ShareIcon from "@material-ui/icons/Share";
-
+import avatar from "../assest/avatar.png";
 
 const drawerWidth = 240;
 
@@ -150,7 +150,9 @@ const Drawerr = () => {
                 open && classes.menuButtonHidden
               )}
             >
-              <Avatar aria-label="recipe" style={{marginLeft:"-0.5vw"}}>T</Avatar>
+              <Avatar aria-label="recipe" style={{marginLeft:"-0.6vw",marginTop:"0.9vh"}}>
+                <img src={avatar}/>
+              </Avatar>
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -163,7 +165,9 @@ const Drawerr = () => {
         >
           <div className={classes.toolbarIcon}>
             <CardHeader
-              avatar={<Avatar aria-label="recipe">T</Avatar>}
+              avatar={<Avatar aria-label="recipe">
+                <img src={avatar}/>
+              </Avatar>}
               title="Tomas Wilson"
               subheader="luckytom@rach"
             />

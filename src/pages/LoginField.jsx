@@ -1,18 +1,18 @@
 import { Grid, makeStyles, Typography } from "@material-ui/core";
 import React, { useState } from "react";
-import img from "../../assest/Bitmap.png";
-import group from "../../assest/Group.png";
+import img from "../assest/home.png";
+import group from "../assest/Group.png";
 import Button from "@material-ui/core/Button";
-import Homecar from "../../component/HomeCar";
+import Homecar from "../component/HomeCar";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
-import google from "../../assest/google-button.svg";
-import facebook from "../../assest/facebook-button.svg";
-import insta from "../../assest/instagram-button.svg";
-import car from "../../assest/car.jpg";
+import google from "../assest/google-button.svg";
+import facebook from "../assest/facebook-button.svg";
+import insta from "../assest/instagram-button.svg";
+import car from "../assest/car.jpg";
 import { useSelector, useDispatch } from "react-redux";
 
 const LoginField = () => {
