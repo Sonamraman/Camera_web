@@ -4,7 +4,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import DirectionsCarIcon from "@material-ui/icons/DirectionsCar";
 import { makeStyles } from "@material-ui/core/styles";
 import {useSelector, useDispatch} from 'react-redux'
-import { changeMode } from "../redux/action";
+import { changeMode } from "../redux/action/action";
 
 // const HomeCar = ({isHouse,setIsHouse}) => {
    
@@ -19,19 +19,19 @@ import { changeMode } from "../redux/action";
       justifySelf:"center"
     },
     home: {
-      backgroundColor: !isHouse ? "#1678f1":"#2727ef",
+      backgroundColor: !isHouse ? "#5CB7FF":"#1E82D2",
       color: "white",
       padding:"5px 40px",
       '&:hover':{
-        backgroundColor: !isHouse ? "#1678f1":"#2727ef"
+        backgroundColor: !isHouse ? "#5CB7FF":"#1E82D2"
       }
     },
     car: {
-      backgroundColor: isHouse ? "#1678f1":"#2727ef",
+      backgroundColor: isHouse ? "#5CB7FF":"#1E82D2",
       color: "white",
       padding:"5px 40px",
       '&:hover':{
-        backgroundColor: isHouse ? "#1678f1":"#2727ef"
+        backgroundColor: isHouse ? "#5CB7FF":"#1E82D2"
       }
     },
   }));

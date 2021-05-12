@@ -17,8 +17,19 @@ const useStyle = makeStyles((theme) => ({
   },
   calender: {
     backgroundColor:"#1678f1",
+    width:"22vw",
     height: "100vh",
-    marginLeft:"5vw",
+    marginLeft:"2vw",
+    float:"right"
+  },
+  cal:{
+    width: "18vw",
+    maxWidth: "100%",
+    background: "#1678f1",
+    fontFamily: "Arial, Helvetica, sans-serif",
+    lineHeight: "1.125em",
+    marginLeft:"2vw",
+    marginTop:"3vh",
   },
 }));
 const tiers = [
@@ -27,21 +38,21 @@ const tiers = [
     heading: "Living Room",
     time: "00:10AM",
     title: " People was detected",
-    content: "Lorem ipsum dolor sit amet. ",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
     heading: "Bedroom",
     time: "00:10AM",
     title: " People was detected",
-    content: "Lorem ipsum dolor sit amet.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
     heading: "Kitchen",
     time: "00:10AM",
     title: " People was detected",
-    content: "Lorem ipsum dolor sit amet.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
 ];
 const Activity = () => {
@@ -65,26 +76,22 @@ const Activity = () => {
             {tiers.map((tier) => (
               <div style={{marginTop: "2vh" ,display:"flex", justifyContent:"space-between"}}>
                 <div >
-                  <video width="300" controls src={tier.video} type="video/mp4">
-                    {" "}
-                  </video>
+                  <video width="300" controls src={tier.video} type="video/mp4"/>
                 </div>
                   <div style={{marginLeft:"2vw"}}>
                     <Typography variant="h6" style={{fontWeight:"bold"}}>{tier.heading}</Typography>
                     <Typography >{tier.title}</Typography>
-                    <Typography variant="caption">{tier.content}</Typography>
+                    <Typography variant="caption" style={{width:"25vw", wordWrap:"normal", }}>{tier.content}</Typography>
                   </div>
-                  <div style={{ marginLeft: "4vw" }}>
-                    <Typography variant="h6" style={{opacity: "0.5" }}>{tier.time}</Typography>
+                  <div style={{marginLeft:"2vw"}}>
+                    <Typography variant="h6" style={{opacity: "0.5"}}>{tier.time}</Typography>
                   </div>
               </div>
             ))}
           </div>
           <div className={classes.calender} style={{justifyContent:"flex-end",}}>
             <Typography variant="h6" style={{fontWeight:"bold",marginTop:"2vh",marginLeft:"1vw"}}>Choose Day</Typography>
-            <div style={{marginTop:"2vh",}}>
-              <Calendar value={dateState} onChange={changeDate} />
-            </div>
+            <Calendar value={dateState} onChange={changeDate} className={classes.cal}/>
           </div>
         </div>
       </div>

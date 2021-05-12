@@ -43,11 +43,14 @@ const useStyles = makeStyles((theme) => ({
     minWidth: "80vw",
   },
   homecar: {
-    marginLeft: "20vw",
+    position:"absolute",
+    right:"34vw",
     marginTop: "3vh",
+    float:"center",
   },
   icon1: {
-    marginLeft: "22vw",
+    position: "absolute",
+    right: "1vw",
     marginTop: "4vh",
     color: "#1678f1",
   },

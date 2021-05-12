@@ -1,24 +1,13 @@
 import React from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import Avatar from "@material-ui/core/Avatar";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Link from "@material-ui/core/Link";
-import Badge from "@material-ui/core/Badge";
-import CardHeader from "@material-ui/core/CardHeader";
-import MenuIcon from "@material-ui/icons/Menu";
+import {
+  Avatar,Toolbar,
+  IconButton,Divider,
+  CssBaseline,CardHeader,
+  Drawer,ListItem,ListItemIcon,ListItemText,
+  AppBar,Link,Badge,
+} from "@material-ui/core";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import LanguageIcon from "@material-ui/icons/Language";
@@ -28,6 +17,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
 import ShareIcon from "@material-ui/icons/Share";
 import avatar from "../assest/avatar.png";
+import Share from "../pages/Share";
 
 const drawerWidth = 240;
 
@@ -100,26 +90,13 @@ const useStyles = makeStyles((theme) => ({
       width: theme.spacing(9),
     },
   },
-  
-
-  // container: {
-  //   paddingTop: theme.spacing(4),
-  //   paddingBottom: theme.spacing(4),
-  // },
-  // paper: {
-  //   padding: theme.spacing(2),
-  //   display: "flex",
-  //   overflow: "auto",
-  //   flexDirection: "column",
-  // },
-  // fixedHeight: {
-  //   height: "79vh",
-  //   width:"78vw"
-  // },
 }));
 
 const Drawerr = () => {
   const classes = useStyles();
+
+  //for Drawer
+
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -127,6 +104,19 @@ const Drawerr = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  //for Share dialog box
+
+  const [opendialog, setOpendialog] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpendialog(true);
+  };
+
+  const handleClose = () => {
+    setOpendialog(false);
+  };
+  
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   const [invisible, setInvisible] = React.useState(false);
@@ -177,18 +167,23 @@ const Drawerr = () => {
           </div>
           <Divider/>
           <div>
+            <Link href="/home">
             <ListItem button>
               <ListItemIcon>
                 <VideocamIcon />
               </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItem>
+            </Link>
+            <Link href="/device">
             <ListItem button>
               <ListItemIcon>
                 <LanguageIcon />
               </ListItemIcon>
               <ListItemText primary="Device's" />
             </ListItem>
+            </Link>
+            <Link href="/activity">
             <ListItem button>
               <ListItemIcon>
                 <Badge color="secondary" variant="dot" invisible={invisible}>
@@ -197,41 +192,44 @@ const Drawerr = () => {
               </ListItemIcon>
               <ListItemText primary="Last Activity" />
             </ListItem>
+            </Link>
+            <Link href="/viewall">
             <ListItem button>
               <ListItemIcon>
                 <ViewComfyIcon />
               </ListItemIcon>
               <ListItemText primary="View All" />
             </ListItem>
+            </Link>
+            <Link href="/account">
             <ListItem button>
               <ListItemIcon>
                 <PersonIcon />
               </ListItemIcon>
               <ListItemText primary="Account" />
             </ListItem>
+            </Link>
+            <Link href="/subscription">
             <ListItem button>
               <ListItemIcon>
                 <SubscriptionsIcon />
               </ListItemIcon>
               <ListItemText primary="Subscription" />
             </ListItem>
+            </Link>
+            <Link onClick={handleClickOpen}>
             <ListItem button>
               <ListItemIcon>
                 <ShareIcon />
               </ListItemIcon>
               <ListItemText primary="Share" />
             </ListItem>
+            </Link>
+            <Share opendialog={opendialog} setOpendialog={setOpendialog}/>
           </div>
         </Drawer>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
-          {/* <Container maxWidth="lg" className={classes.container}>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper className={fixedHeightPaper}></Paper>
-              </Grid>
-            </Grid>
-          </Container> */}
         </main>
       </div>
     </>
