@@ -140,7 +140,7 @@ const Drawerr = () => {
                 open && classes.menuButtonHidden
               )}
             >
-              <Avatar aria-label="recipe" style={{marginLeft:"-0.6vw",marginTop:"0.9vh"}}>
+              <Avatar aria-label="recipe" style={{marginLeft:"-0.8vw",marginTop:"0.9vh"}}>
                 <img src={avatar}/>
               </Avatar>
             </IconButton>
@@ -166,63 +166,63 @@ const Drawerr = () => {
             </IconButton>
           </div>
           <Divider/>
-          <div>
-            <Link href="/home">
+          <div style={{marginLeft:"1vh"}}>
+            <Link href="/home" style={{color:"black",textDecoration:"none"}}>
             <ListItem button>
               <ListItemIcon>
                 <VideocamIcon />
               </ListItemIcon>
-              <ListItemText primary="Home" />
+              <ListItemText primary="Home" style={{marginLeft:"-1.2vh"}}/>
             </ListItem>
             </Link>
-            <Link href="/device">
+            <Link href="/device" style={{color:"black",textDecoration:"none"}}>
             <ListItem button>
               <ListItemIcon>
                 <LanguageIcon />
               </ListItemIcon>
-              <ListItemText primary="Device's" />
+              <ListItemText primary="Device's" style={{marginLeft:"-1.2vh"}}/>
             </ListItem>
             </Link>
-            <Link href="/activity">
+            <Link href="/activity" style={{color:"black",textDecoration:"none"}}>
             <ListItem button>
               <ListItemIcon>
                 <Badge color="secondary" variant="dot" invisible={invisible}>
                   <NotificationsIcon />
                 </Badge>
               </ListItemIcon>
-              <ListItemText primary="Last Activity" />
+              <ListItemText primary="Last Activity" style={{marginLeft:"-1.2vh"}}/>
             </ListItem>
             </Link>
-            <Link href="/viewall">
+            <Link href="/viewall" style={{color:"black",textDecoration:"none"}}>
             <ListItem button>
               <ListItemIcon>
                 <ViewComfyIcon />
               </ListItemIcon>
-              <ListItemText primary="View All" />
+              <ListItemText primary="View All" style={{marginLeft:"-1.2vh"}}/>
             </ListItem>
             </Link>
-            <Link href="/account">
+            <Link href="/account" style={{color:"black",textDecoration:"none"}}>
             <ListItem button>
               <ListItemIcon>
                 <PersonIcon />
               </ListItemIcon>
-              <ListItemText primary="Account" />
+              <ListItemText primary="Account" style={{marginLeft:"-1.2vh"}}/>
             </ListItem>
             </Link>
-            <Link href="/subscription">
+            <Link href="/subscription" style={{color:"black",textDecoration:"none"}}>
             <ListItem button>
               <ListItemIcon>
                 <SubscriptionsIcon />
               </ListItemIcon>
-              <ListItemText primary="Subscription" />
+              <ListItemText primary="Subscription" style={{marginLeft:"-1.2vh"}}/>
             </ListItem>
             </Link>
-            <Link onClick={handleClickOpen}>
+            <Link onClick={handleClickOpen} style={{color:"black",textDecoration:"none"}}>
             <ListItem button>
               <ListItemIcon>
                 <ShareIcon />
               </ListItemIcon>
-              <ListItemText primary="Share" />
+              <ListItemText primary="Share" style={{marginLeft:"-1.2vh"}}/>
             </ListItem>
             </Link>
             <Share opendialog={opendialog} setOpendialog={setOpendialog}/>
