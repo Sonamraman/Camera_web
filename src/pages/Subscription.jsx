@@ -31,9 +31,9 @@ const useStyles = makeStyles((theme) => ({
     right: "30vw",
     marginLeft: "2vw",
     marginTop: "78vh",
-    '&:: placeholder' : {
+    '& placeholder' : {
       color:"white"
-      }
+      },
   },
   
 }));

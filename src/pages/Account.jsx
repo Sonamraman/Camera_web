@@ -115,7 +115,7 @@ const Account = () => {
               Pin Code
             </Typography>
             <hr />
-            <div style={{marginTop:"-1vh"}} onClick={()=>setOpen(true)}>
+            <div style={{marginTop:"-1vh"}} onClick={handleClickOpen}>
               <Typography variant="caption" >
                 Change Pin Code
               </Typography>
@@ -126,7 +126,7 @@ const Account = () => {
             </div>
 
             <Pin open={open} setOpen={setOpen}/>
-            
+
             <div style={{marginTop:"-1vh"}}>
               <Typography variant="caption">
                 Support

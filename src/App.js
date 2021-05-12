@@ -15,13 +15,14 @@ import Subscription from './pages/Subscription';
 import Subscription2 from './pages/Subscription2';
 import ViewAll from './pages/VewAll';
 import configStore from './redux/store/store';
+import CameraScreen from './pages/CameraScreen';
 
 function App() {
  const store = configStore()
   return (
    <>
    <Provider store={store}> 
-   <Account/>
+   <CameraScreen/>
    </Provider>
    </>
   );

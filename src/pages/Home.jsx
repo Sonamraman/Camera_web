@@ -134,7 +134,9 @@ const Home = () => {
                     </Grid>
                     <Grid item style={{ marginLeft: "28vw", marginTop: "0.5vh",}}>
                       <Battery90Icon/>
-                      <WifiIcon/>
+                      <div style={{marginLeft:"3vw",marginTop:"-4.5vh"}}>
+                       <WifiIcon />
+                      </div>
                     </Grid>
                     <div className={classes.play}>
                       <IconButton >
