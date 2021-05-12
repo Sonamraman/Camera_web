@@ -1,9 +1,9 @@
 import React from "react";
-import Drawerr from "../component/Drawerr";
+import Drawerr from "../../component/Drawerr";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Button, TextField } from "@material-ui/core";
-import iphone from "../assest/iPhone.png";
-import samssung from "../assest/Samssung.png";
+import iphone from "../../assest/iPhone.png";
+import samssung from "../../assest/Samssung.png";
 
 const useStyles = makeStyles((theme) => ({
   main: {

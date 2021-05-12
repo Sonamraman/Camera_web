@@ -17,7 +17,10 @@ import {
 import profile from "../assest/avatar.png";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import CloseIcon from '@material-ui/icons/Close';
-import Pin from "../component/Pin";
+import Pin from "./ChangeData/Pin";
+import Changename from "./ChangeData/Changename";
+import Changeemail from "./ChangeData/Changeemail";
+import Changepassword from "./ChangeData/Changepassword";
 
 const useStyle = makeStyles((theme) => ({
   main: {

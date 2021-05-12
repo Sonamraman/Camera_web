@@ -16,16 +16,12 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-const Changename = ({open,setOpen}) => {
+const Changename = () => {
   const classes = useStyle();
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <div>
-      <Paper open={open} onClose={handleClose} className={classes.paper}>
+      <Paper className={classes.paper}>
         <Typography variant="h6" style={{fontWeight:"bold"}}>Change Name</Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -40,7 +36,6 @@ const Changename = ({open,setOpen}) => {
           />
           <Button
             variant="contained"
-            onClick={handleClose}
             style={{
               width: "20vw",
               marginTop: "40vh",

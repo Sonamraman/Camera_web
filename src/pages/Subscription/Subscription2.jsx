@@ -1,10 +1,10 @@
 import React from "react";
-import Drawerr from "../component/Drawerr";
+import Drawerr from "../../component/Drawerr";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Button, TextField } from "@material-ui/core";
-import phones from "../assest/phones.png";
-import google from "../assest/GooglePlay.png";
-import apple from "../assest/AppStore.png";
+import phones from "../../assest/phones.png";
+import google from "../../assest/GooglePlay.png";
+import apple from "../../assest/AppStore.png";
 
 const useStyles = makeStyles((theme) => ({
   main: {
