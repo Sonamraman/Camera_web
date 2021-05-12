@@ -7,16 +7,24 @@ const useStyle = makeStyles((theme) => ({
     height:"85vh",
     padding: theme.spacing(4),
   },
-  text: {
-    marginTop: "3vh",
-  },
   form: {
     width: "100%",
     marginTop: theme.spacing(7),
   },
+  text: {
+    paddingBottom:"0.8vh",
+    width: "100%",
+    marginTop: "9px",
+    marginLeft:"-1px",
+    boxSizing: "border-box",
+    border: "none",
+    borderBottom: "1px solid grey",
+    fontWeight:"bold",
+    fontSize:"20px"
+  },
 }));
 
-const Changename = () => {
+const Changename = ({showname,setShowname}) => {
   const classes = useStyle();
 
   return (
@@ -24,18 +32,11 @@ const Changename = () => {
       <Paper className={classes.paper}>
         <Typography variant="h6" style={{fontWeight:"bold"}}>Change Name</Typography>
         <form className={classes.form} noValidate>
-          <TextField
-            marginLeft="normal"
-            value="Tomas Wilson"
-            id="name"
-            fullWidth
-            label="NAME"
-            name="name"
-            className={classes.text}
-            autoComplete="name"
-          />
+          <label for="fname" style={{ opacity: "80%",fontSize:"12px"}}>Name</label><br/>
+          <input type="text" id="fname" name="fname" value="Tomas Wilson" className={classes.text}/>
           <Button
             variant="contained"
+            onClick={()=>setShowname(false)}
             style={{
               width: "20vw",
               marginTop: "40vh",

@@ -14,28 +14,31 @@ const useStyle = makeStyles((theme) => ({
       width: "100%",
       marginTop: theme.spacing(7),
     },
+    text: {
+      paddingBottom:"0.8vh",
+      width: "100%",
+      marginTop: "9px",
+      marginLeft:"-1px",
+      boxSizing: "border-box",
+      border: "none",
+      borderBottom: "1px solid grey",
+      fontWeight:"bold",
+      fontSize:"20px"
+    },
   }));
 
-const Changeemail = () => {
+const Changeemail = ({showemail,setShowemail}) => {
     const classes = useStyle();
     return (
         <div>
           <Paper className={classes.paper}>
             <Typography variant="h6" style={{fontWeight:"bold"}}>Change Email</Typography>
             <form className={classes.form} noValidate>
-              <TextField
-               marginLeft="normal"
-               value="luckytom@rach"
-               type="email"
-               id="email"
-               fullWidth
-               label="Email Address"
-               name="email"
-               className={classes.text}
-               autoComplete="email"
-              />
+              <label for="email" style={{ opacity: "80%",fontSize:"12px"}}>Email</label><br/>
+              <input type="email" id="email" name="email" value="luckytom@rach" className={classes.text}/>
               <Button
                variant="contained"
+               onClick={()=>setShowemail(false)}
                style={{
                 width: "20vw",
                 marginTop: "40vh",

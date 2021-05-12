@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawerr from "../component/Drawerr";
 import {
@@ -6,6 +6,7 @@ import {
   IconButton,
   Button,
   Paper,
+  Grid,
   TextField,
   Typography,
   Dialog,
@@ -42,17 +43,6 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
   },
-  text: {
-    font:"revert !important",
-    paddingBottom:"0.8vh",
-    width: "100%",
-    marginTop: "4px",
-    marginLeft:"-1px",
-    boxSizing: "border-box",
-    border: "none",
-    borderBottom: "1px solid grey",
-    opacity: "0.8",
-  },
   detail: {
     marginLeft:"1vw",
     marginTop:"1.6vh",
@@ -74,6 +64,28 @@ const Account = () => {
     setOpen(false);
   };
 
+  const [showname, setShowname] = useState(false)
+  const [showemail, setShowemail] = useState(false)
+  const [showpass, setShowpass] = useState(false)
+
+  const showName = ()=>{
+    setShowemail(false)
+    setShowpass(false)
+    setShowname(true)
+  }
+
+  const showEmail = ()=>{
+    setShowemail(true)
+    setShowpass(false)
+    setShowname(false)
+  }
+
+  const showPass = ()=>{
+    setShowemail(false)
+    setShowpass(true)
+    setShowname(false)
+  }
+
   return (
     <div className={classes.main}>
       <div className={classes.drawer}>
@@ -83,7 +95,9 @@ const Account = () => {
         <Typography variant="h5" style={{fontWeight: "bold", color: "white", marginLeft: "3vw", marginTop: "3vh" }}>
           Account
         </Typography>
-        <Paper className={classes.paper}>
+        <Grid container>
+          <Grid item>
+          <Paper className={classes.paper}>
         <div>
           <Avatar src={profile}
             style={{height: "20vh",width: "11vw",marginLeft: "4vw",marginTop: "3.5vh",}}
@@ -95,29 +109,43 @@ const Account = () => {
             luckytom@rach
           </Typography>
         </div>
-        <div onClick={handleClickOpen} style={{marginLeft:"1vw",marginRight:"1vw",marginTop:"2vh"}}>
-          <label for="fname" style={{ opacity: "0.6",fontSize:"12px"}}>Name</label>
-          <input type="text" id="fname" name="fname" value="Tomas Wilson" className={classes.text}/>
+        <div onClick={()=>showName()} style={{marginLeft:"1vw",marginRight:"1vw",marginTop:"2vh"}}>
+          <Typography style={{opacity: "0.6",fontSize:"12px"}}>
+            Name
+          </Typography>
+          <Typography variant="caption">
+            Tomas Wilson
+          </Typography>
+          <hr style={{marginTop:"0.8vh"}}/>
         </div>
-        <div style={{marginLeft:"1vw",marginRight:"1vw"}}>
-          <label for="fname" style={{ opacity: "0.6",fontSize:"12px"}}>Email</label>
-          <input type="email" id="fname" name="fname" value="luckytom@rach" className={classes.text}/>
+
+        <div onClick={()=>showEmail()} style={{marginTop:"-0.2vh",marginLeft:"1vw",marginRight:"1vw"}}>
+          <Typography style={{opacity: "0.6",fontSize:"12px"}}>
+            Email
+          </Typography>
+          <Typography variant="caption">
+            luckytom@rach
+          </Typography>
+          <hr style={{marginTop:"0.8vh"}}/>
         </div>
-        <div style={{marginTop:"1vh",marginLeft:"1vw", marginRight:"1vw",marginBottom:"0.8vh"}}>
+
+        <div onClick={()=>showPass()} style={{marginTop:"0.2vh",marginLeft:"1vw", marginRight:"1vw",marginBottom:"0.8vh"}}>
           <Typography variant="caption">
             Change Password
           </Typography>
-          <IconButton href="/changepassword" style={{marginLeft:"14.9vw",marginTop:"-6vh", color:"black", }}>
+          <IconButton style={{marginLeft:"14.9vw",marginTop:"-6vh", color:"black", }}>
             <ArrowForwardIosIcon style={{ fontSize: 15 }}/>
           </IconButton>
           <hr style={{marginTop:"-1.7vh"}}/>
         </div>
+
         <div style={{height:"4vh", weidth:"7vw", marginTop:"0vh",background:"#ECECEC"}}></div>
           <div className={classes.detail}>
             <Typography variant="caption" >
               Pin Code
             </Typography>
             <hr />
+
             <div style={{marginTop:"-1vh"}} onClick={handleClickOpen}>
               <Typography variant="caption" >
                 Change Pin Code
@@ -139,6 +167,7 @@ const Account = () => {
               </IconButton>
               <hr style={{marginTop:"-0.8vh"}}/>
             </div>
+
             <div style={{marginTop:"-1.1vh"}}>
               <Typography variant="caption" style={{marginTop:"-1vh"}}>
                 Logout
@@ -149,6 +178,20 @@ const Account = () => {
             </div>
           </div>
         </Paper>
+          </Grid>
+          <Grid item style={{marginLeft:"10vw",marginTop:"4vh"}}>
+          {
+          showname?<div><Changename showname={showname} setShowname={setShowname}/></div>:null
+          }
+          {
+          showemail?<div><Changeemail showemail={showemail} setShowemail={setShowemail}/></div>:null
+          }
+          {
+          showpass?<div><Changepassword showpass={showpass} setShowpass={setShowpass}/></div>:null
+          }
+          </Grid>
+        </Grid>
+        
       </div>
     </div>
   );
