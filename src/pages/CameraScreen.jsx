@@ -11,6 +11,7 @@ import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import WifiIcon from "@material-ui/icons/Wifi";
 import Battery90Icon from "@material-ui/icons/Battery90";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
+import Sharevideo from "./Sharevideo";
 
 const useStyle = makeStyles((theme) => ({
   drawer: {
@@ -53,6 +54,13 @@ const tiers = [
 
 const CameraScreen = () => {
   const classes = useStyle();
+
+  const [share, setShare] = React.useState(false);
+
+  const handleShareOpen = () => {
+    setShare(true);
+  };
+
   return (
     <div className={classes.main}>
       <div className={classes.drawer}>
@@ -88,13 +96,18 @@ const CameraScreen = () => {
               </Grid>
               <div className={classes.play}>
                 <IconButton style={{color:"black" }} >
+                  <div onClick={handleShareOpen}>
                   <ShareIcon style={{ marginRight: "6vw" }} />
+                  </div>
                   <NavigateBeforeIcon />
                   <PauseCircleOutlineIcon />
                   <NavigateNextIcon style={{ marginRight: "6vw" }} />
                   <FullscreenExitIcon style={{ marginRight: "0vw" }} />
                 </IconButton>
               </div>
+
+              <Sharevideo share={share} setShare={setShare}/>
+              
             </Grid>
           </Grid>
           <Grid item style={{marginLeft:"10.5vw"}}>

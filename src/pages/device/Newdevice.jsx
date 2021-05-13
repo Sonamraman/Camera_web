@@ -1,10 +1,11 @@
 import React from "react";
-import Drawerr from "../component/Drawerr";
+import Drawerr from "../../component/Drawerr";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
   Button,
 } from "@material-ui/core";
+import Devicename from "./Devicename";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -22,6 +23,13 @@ const useStyles = makeStyles((theme) => ({
 
 const Newdevice = () => {
   const classes = useStyles();
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
   return (
     <div className={classes.main}>
       <div className={classes.drawer}>
@@ -50,9 +58,11 @@ const Newdevice = () => {
         </Typography>
         </div>
         <div style={{ marginLeft: "33vw", marginTop: "5vh" }}>
+          <div onClick={handleClickOpen}>
           <Typography variant="h6" style={{ fontWeight: "bold" }}>
             Unknown Device
           </Typography>
+          </div>
           <Typography variant="caption" style={{ opacity: "0.5" }}>
             #34215678443
           </Typography><br/>
@@ -60,6 +70,9 @@ const Newdevice = () => {
             Connected by 02:22 PM
           </Typography>
         </div>
+
+        <Devicename open={open} setOpen={setOpen}/>
+
       </div>
     </div>
   );

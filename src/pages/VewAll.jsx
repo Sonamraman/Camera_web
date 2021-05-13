@@ -23,6 +23,7 @@ import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import Drawerr from "../component/Drawerr";
+import Sharevideo from "./Sharevideo";
 const tiers = [
   {
     img: img1,
@@ -77,6 +78,13 @@ const useStyle = makeStyles((theme) => ({
 }));
 const ViewAll = () => {
   const classes = useStyle();
+
+  const [share, setShare] = React.useState(false);
+
+  const handleShareOpen = () => {
+    setShare(true);
+  };
+
   return (
     <div className={classes.main}>
       <div className={classes.drawer}>
@@ -95,16 +103,19 @@ const ViewAll = () => {
                 <GridListTileBar className={classes.play}
                   actionIcon={
                     <IconButton className={classes.icon}>
+                      <div onClick={handleShareOpen}>
                       <ShareIcon style={{ marginRight: "6vw" }} />
+                      </div>
                       <NavigateBeforeIcon />
                       <PauseCircleOutlineIcon />
                       <NavigateNextIcon style={{ marginRight: "6vw" }} />
                       <FullscreenExitIcon style={{ marginRight: "2vw" }} />
                     </IconButton>
                   }
-                />
+                /> 
               </GridListTile>
             ))}
+            <Sharevideo share={share} setShare={setShare}/>
           </GridList>
         </div>
       </div>

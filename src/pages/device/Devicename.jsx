@@ -19,65 +19,64 @@ const useStyle = makeStyles((theme) => ({
         height:"5vh",
         width:"2.5vw"
     },
-    form:{
-      width: "2vw",
-      height: "8vh",
-      marginRight: "1vw",
-      textAlign: "center",
+    form: {
+      width: "100%",
+      marginTop: theme.spacing(2),
+    },
+    text: {
+      paddingBottom:"0.8vh",
+      width: "100%",
+      marginTop: "9px",
+      marginLeft:"-1px",
       boxSizing: "border-box",
       border: "none",
-      borderBottom: "4px solid #0A0F2D",
-      fontSize:"40px",
+      borderBottom: "1px solid grey",
+      opacity:"0.8",
       fontWeight:"bold",
-      color:"#0A0F2D"
+      fontSize:"20px"
     },
     button:{
-      margin: "0vh 13vw 5vh",
-      height:"4.5vh",
-      width:"8vw",
-      fontSize:"9px",
-      backgroundColor: "#1E82D2",
-      color: "white",
-    }
-}))
+        margin: "4vh 13vw 5vh",
+        height:"4.5vh",
+        width:"8vw",
+        fontSize:"9px",
+        backgroundColor: "#1E82D2",
+        color: "white",
+      }
+  }));
 
-const Pin = ({open,setOpen}) => {
+const Devicename = ({open,setOpen}) => {
     const classes = useStyle();
 
     const handleClose = () => {
         setOpen(false)
-        console.log("close")
       };
 
+
     return (
-      <div>
-        <Dialog open={open}>
+        <div>
+            <Dialog open={open}>
           <DialogTitle>
             <Avatar aria-label="close" onClick={handleClose} className={classes.avatar}>
               <CloseIcon/>
             </Avatar>
           </DialogTitle> 
           <DialogContent>
-            <div style={{marginLeft:"11.2vw",marginTop:"1vh"}}>
-              <form>
-              <input type="text" maxlength="1" className={classes.form}/>
-              <input type="text" maxlength="1" className={classes.form}/>
-              <input type="text" maxlength="1" className={classes.form}/>
-              <input type="text" maxlength="1" className={classes.form}/>
+            <div style={{margin:"-2vh 6vw 0"}}>
+              <form className={classes.form}>
+              <label for="fname" style={{ opacity: "80%",fontSize:"12px"}}>Device Name</label><br/>
+              <input type="text" id="fname" name="fname" value="House Enterance" className={classes.text}/>
               </form>
             </div>
-          <DialogContentText style={{marginLeft:"13vw",marginTop:"2vh",fontSize:"10px"}}>
-            Please type your PIN
-          </DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button variant="contained" onClick={handleClose} color="primary" className={classes.button}>
-              Submit
+              Save
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+        </div>
     )
 }
 
-export default Pin
+export default Devicename

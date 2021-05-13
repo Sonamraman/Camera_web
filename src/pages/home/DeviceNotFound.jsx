@@ -14,25 +14,27 @@ import CloseIcon from '@material-ui/icons/Close';
 const useStyle = makeStyles((theme) => ({
     avatar:{
         marginTop:"1vh",
-        marginLeft:"30vw",
+        marginLeft:"40vw",
         backgroundColor:"#E02020",
         height:"5vh",
         width:"2.5vw"
     },
-    form:{
-      width: "2vw",
-      height: "8vh",
-      marginRight: "1vw",
-      textAlign: "center",
-      boxSizing: "border-box",
-      border: "none",
-      borderBottom: "4px solid #0A0F2D",
-      fontSize:"40px",
-      fontWeight:"bold",
-      color:"#0A0F2D"
-    },
+    head:{
+        marginLeft:"14.3vw",
+        marginTop:"1vh",
+        fontSize:"20px",
+        fontWeight:"bold",
+        color:"black"
+      },
+      subhead:{
+          padding:"0 11vw 0",
+          marginTop:"-1vh",
+          fontSize:"12px",
+          color:"black",
+          textAlign:"center"
+      },
     button:{
-      margin: "0vh 13vw 5vh",
+      margin: "0vh 18.5vw 8vh",
       height:"4.5vh",
       width:"8vw",
       fontSize:"9px",
@@ -41,43 +43,37 @@ const useStyle = makeStyles((theme) => ({
     }
 }))
 
-const Pin = ({open,setOpen}) => {
+const DeviceNotFound = ({open,setOpen}) => {
     const classes = useStyle();
 
     const handleClose = () => {
-        setOpen(false)
-        console.log("close")
+        setOpen(false);
       };
 
     return (
-      <div>
-        <Dialog open={open}>
+        <div>
+            <Dialog open={open}>
           <DialogTitle>
             <Avatar aria-label="close" onClick={handleClose} className={classes.avatar}>
               <CloseIcon/>
             </Avatar>
           </DialogTitle> 
           <DialogContent>
-            <div style={{marginLeft:"11.2vw",marginTop:"1vh"}}>
-              <form>
-              <input type="text" maxlength="1" className={classes.form}/>
-              <input type="text" maxlength="1" className={classes.form}/>
-              <input type="text" maxlength="1" className={classes.form}/>
-              <input type="text" maxlength="1" className={classes.form}/>
-              </form>
-            </div>
-          <DialogContentText style={{marginLeft:"13vw",marginTop:"2vh",fontSize:"10px"}}>
-            Please type your PIN
+          <DialogContentText className={classes.head}>
+            Device not found !
+          </DialogContentText>
+          <DialogContentText className={classes.subhead}>
+            We couldn`t find a new device near you, please check the Internet connections on all your devices
           </DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button variant="contained" onClick={handleClose} color="primary" className={classes.button}>
-              Submit
+              Try Again
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+        </div>
     )
 }
 
-export default Pin
+export default DeviceNotFound
