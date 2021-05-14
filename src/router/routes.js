@@ -1,6 +1,6 @@
 import React from 'react'
 import {BrowserRouter,Switch,Route} from 'react-router-dom'
-import Account from '../pages/Account'
+import Account from '../pages/account/Account'
 import Activity from '../pages/activity/Activity'
 import Home from '../pages/home/Home'
 import Login from '../pages/login/Login'

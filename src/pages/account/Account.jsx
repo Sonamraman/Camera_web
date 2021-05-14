@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Drawerr from "../component/Drawerr";
+import Drawerr from "../../component/Drawerr";
 import {
   Avatar,
   IconButton,
@@ -15,13 +15,13 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@material-ui/core";
-import profile from "../assest/avatar.png";
+import profile from "../../assest/avatar.png";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import CloseIcon from '@material-ui/icons/Close';
-import Pin from "./ChangeData/Pin";
-import Changename from "./ChangeData/Changename";
-import Changeemail from "./ChangeData/Changeemail";
-import Changepassword from "./ChangeData/Changepassword";
+import Pin from "./Pin";
+import Changename from "./Changename";
+import Changeemail from "./Changeemail";
+import Changepassword from "./Changepassword";
 
 const useStyle = makeStyles((theme) => ({
   main: {
@@ -35,6 +35,12 @@ const useStyle = makeStyles((theme) => ({
   root: {
     background: "blue",
   },
+  head:{
+    fontWeight: "bold", 
+    color: "white", 
+    marginLeft: "3vw", 
+    marginTop: "3vh" 
+  },
   paper: {
     height:"85vh",
     width: "20vw",
@@ -42,6 +48,12 @@ const useStyle = makeStyles((theme) => ({
     marginLeft: "3vw",
     display: "flex",
     flexDirection: "column",
+  },
+  avatar:{
+    height: "20vh",
+    width: "11vw",
+    marginLeft: "4vw",
+    marginTop: "3.5vh",
   },
   detail: {
     marginLeft:"1vw",
@@ -92,16 +104,14 @@ const Account = () => {
         <Drawerr />
       </div>
       <div className={classes.home}>
-        <Typography variant="h5" style={{fontWeight: "bold", color: "white", marginLeft: "3vw", marginTop: "3vh" }}>
+        <Typography variant="h5" className={classes.head} >
           Account
         </Typography>
         <Grid container>
           <Grid item>
           <Paper className={classes.paper}>
         <div>
-          <Avatar src={profile}
-            style={{height: "20vh",width: "11vw",marginLeft: "4vw",marginTop: "3.5vh",}}
-          />
+          <Avatar src={profile} className={classes.avatar}/>
           <Typography variant="h5" style={{marginLeft: "4vw",fontWeight: "bold",}}>
             Tomas Wilson
           </Typography>
