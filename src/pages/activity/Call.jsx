@@ -3,6 +3,7 @@ import {
     makeStyles,
     Avatar,
     Button,
+    CardHeader,
     Dialog,
     DialogActions,
     DialogContent,
@@ -14,70 +15,76 @@ import CloseIcon from '@material-ui/icons/Close';
 const useStyle = makeStyles((theme) => ({
     avatar:{
         marginTop:"1vh",
-        marginLeft:"30vw",
+        marginLeft:"31vw",
         backgroundColor:"#E02020",
         height:"5vh",
         width:"2.5vw"
     },
-    form:{
-      width: "2vw",
-      height: "8vh",
-      marginRight: "1vw",
-      textAlign: "center",
-      boxSizing: "border-box",
-      border: "none",
-      borderBottom: "4px solid #0A0F2D",
-      fontSize:"40px",
-      fontWeight:"bold",
-      color:"#0A0F2D"
-    },
+    head:{
+        marginLeft:"10vw",
+        marginTop:"1vh",
+        fontSize:"20px",
+        fontWeight:"bold",
+        color:"black"
+      },
+      subhead:{
+          padding:"0 4vw 0",
+          marginTop:"-1vh",
+          fontSize:"12px",
+          color:"black",
+      },
     button:{
-      margin: "0vh 13vw 5vh",
+      margin: "1vh 10vw 5vh 0",
       height:"4.5vh",
       width:"8vw",
       fontSize:"9px",
       backgroundColor: "#1E82D2",
       color: "white",
-    }
+    },
+    button1:{
+        margin: "1vh 0vw 5vh 5vw",
+        height:"4.5vh",
+        width:"8vw",
+        fontSize:"9px",
+        border: "1px solid #1E82D2",
+        color: "#1E82D2",
+      }
 }))
 
-const Pin = ({open,setOpen}) => {
+const Call = ({open,setOpen}) => {
     const classes = useStyle();
 
     const handleClose = () => {
         setOpen(false)
-        console.log("close")
       };
 
     return (
-      <div>
-        <Dialog open={open}>
+        <div>
+            <Dialog open={open}>
           <DialogTitle>
             <Avatar aria-label="close" onClick={handleClose} className={classes.avatar}>
               <CloseIcon/>
             </Avatar>
           </DialogTitle> 
           <DialogContent>
-            <div style={{marginLeft:"11.2vw",marginTop:"1vh"}}>
-              <form>
-              <input type="text" maxlength="1" className={classes.form}/>
-              <input type="text" maxlength="1" className={classes.form}/>
-              <input type="text" maxlength="1" className={classes.form}/>
-              <input type="text" maxlength="1" className={classes.form}/>
-              </form>
-            </div>
-          <DialogContentText style={{marginLeft:"13vw",marginTop:"2vh",fontSize:"10px"}}>
-            Please type your PIN
+          <DialogContentText className={classes.head}>
+            Make call to 911 ?
+          </DialogContentText>
+          <DialogContentText className={classes.subhead}>
+          Are you sure that you want to call the 911 emergency service?
           </DialogContentText>
           </DialogContent>
           <DialogActions>
+            <Button variant="outlined" onClick={handleClose} className={classes.button1}>
+              Cancel
+            </Button>
             <Button variant="contained" onClick={handleClose} className={classes.button}>
-              Submit
+              Make Call
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+        </div>
     )
 }
 
-export default Pin
+export default Call

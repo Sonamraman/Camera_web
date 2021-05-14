@@ -26,6 +26,7 @@ import HomeCar from "../../component/HomeCar";
 import Addcamera from "./Addcamera";
 import DeviceNotFound from "./DeviceNotFound";
 import Sharevideo from "../Sharevideo";
+import Call from "../activity/Call";
 
 const useStyles = makeStyles((theme) => ({
   main: {

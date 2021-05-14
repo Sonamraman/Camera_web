@@ -20,11 +20,18 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     right: "29vw",
   },
-  content: {
+  head: {
     position: "absolute",
     right: "24vw",
     marginLeft: "2vw",
     marginTop: "61vh",
+  },
+  content:{
+    opacity: "0.5",
+    marginTop: "1.6vh",
+    width: "40vw",
+    wordWrap: "normal",
+    textAlign: "center",
   },
   input: {
     position: "absolute",
@@ -35,7 +42,24 @@ const useStyles = makeStyles((theme) => ({
       color:"white"
       },
   },
-  
+  text:{
+    backgroundColor: "rgb(108 135 151)",
+    borderColor:"#C7C7C7",
+    borderRadius:"3px",
+    height:"4vh",
+    width:"18vw",
+    fontSize:"9px",
+  },
+  button:{
+    marginLeft: "1vw",
+    backgroundColor: "#0A0F2D",
+    color: "white",
+    border:"none",
+    borderRadius:"2px",
+    height:"4vh",
+    width:"10vw",
+    fontSize:"9px"
+  },
 }));
 
 const Subscription = () => {
@@ -56,29 +80,13 @@ const Subscription = () => {
         </div>
         <div className={classes.img}>
           <img src={iphone} alt="iPhone" height="380vh" />
-          <img
-            src={samssung}
-            alt="samssung"
-            height="410vh"
-            style={{ marginTop: "-7vh" }}
-          />
+          <img src={samssung} alt="samssung" height="410vh" style={{marginTop: "-7vh"}}/>
         </div>
-        <div className={classes.content}>
-          <Typography
-            variant="h5"
-            style={{ fontWeight: "bold", marginLeft: "7vw" }}
-          >
+        <div className={classes.head}>
+          <Typography variant="h5" style={{ fontWeight: "bold", marginLeft: "7vw" }}>
             Get our Mobile Application !
           </Typography>
-          <div
-            style={{
-              opacity: "0.5",
-              marginTop: "1.6vh",
-              width: "40vw",
-              wordWrap: "normal",
-              textAlign: "center",
-            }}
-          >
+          <div className={classes.content}>
             <Typography variant="caption">
               Lorem ipsum dolor sit amet, consectetur and it adipiscing elit,
               sed do eiusmod tem incididunt ut labore et dolore magna enim ad
@@ -94,30 +102,11 @@ const Subscription = () => {
             placeholder="Enter Your Email Address"
             height="5vh"
             width="10vw"
-            style={{
-                backgroundColor: "rgb(108 135 151)",
-                borderColor:"#C7C7C7",
-                borderRadius:"3px",
-                height:"4vh",
-                width:"18vw",
-                fontSize:"9px",
-                
-              }}
+            className={classes.text}
           />
-          <input
-            type="submit"
-            value="Subscribe Now"
-            style={{
-              marginLeft: "1vw",
-              backgroundColor: "#0A0F2D",
-              color: "white",
-              border:"none",
-              borderRadius:"2px",
-              height:"4vh",
-              width:"10vw",
-              fontSize:"9px"
-            }}
-          />
+          <Button className={classes.button} href="/subscription2">
+            Subscribe Now
+          </Button>
         </div>
       </div>
     </div>

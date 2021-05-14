@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
-import Drawerr from "../component/Drawerr";
+import Drawerr from "../../component/Drawerr";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import Call from "./Call";
 
 const useStyle = makeStyles((theme) => ({
   main: {
@@ -26,10 +27,10 @@ const useStyle = makeStyles((theme) => ({
     width: "18vw",
     maxWidth: "100%",
     background: "#1678f1",
+    border:"none",
     fontFamily: "Arial, Helvetica, sans-serif",
     lineHeight: "1.125em",
-    marginLeft:"2vw",
-    marginTop:"3vh",
+    margin:"3vh 1vw 0",
   },
 }));
 const tiers = [
@@ -57,10 +58,18 @@ const tiers = [
 ];
 const Activity = () => {
   const classes = useStyle();
+
   const [dateState, setDateState] = useState(new Date());
   const changeDate = (e) => {
     setDateState(e);
   };
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  
   return (
     <div className={classes.main}>
       <div className={classes.drawer}>
@@ -95,6 +104,9 @@ const Activity = () => {
           </div>
         </div>
       </div>
+
+      <Call open={open} setOpen={setOpen}/>
+
     </div>
   );
 };

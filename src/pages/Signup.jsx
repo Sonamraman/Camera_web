@@ -126,6 +126,7 @@ const Signup = () => {
               />
               <Button
                 type="submit"
+                href="/home"
                 fullWidth
                 variant="contained"
                 color="primary"
@@ -135,7 +136,7 @@ const Signup = () => {
               </Button>
               <div style={{marginTop:"-3vh",fontSize:"12px"}}>
                 Already have an account? {" "}
-                <Link href="/login" variant="body2" style={{color:"#0091FF"}}>
+                <Link href="/" variant="body2" style={{color:"#0091FF"}}>
                   Login
                 </Link>
               </div>

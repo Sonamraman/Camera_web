@@ -20,28 +20,36 @@ const useStyle = makeStyles((theme) => ({
         width:"2.5vw"
     },
     form:{
-      width: "2vw",
+      width: "1.8vw",
       height: "8vh",
-      marginRight: "1vw",
+      marginRight: "0.5vw",
       textAlign: "center",
       boxSizing: "border-box",
       border: "none",
       borderBottom: "4px solid #0A0F2D",
-      fontSize:"40px",
+      fontSize:"30px",
       fontWeight:"bold",
       color:"#0A0F2D"
     },
     button:{
-      margin: "0vh 13vw 5vh",
-      height:"4.5vh",
-      width:"8vw",
-      fontSize:"9px",
-      backgroundColor: "#1E82D2",
-      color: "white",
-    }
+        margin: "1vh 9vw 5vh 0",
+        height:"4.5vh",
+        width:"8vw",
+        fontSize:"9px",
+        backgroundColor: "#1E82D2",
+        color: "white",
+      },
+      button1:{
+          margin: "1vh 0vw 5vh 5vw",
+          height:"4.5vh",
+          width:"8vw",
+          fontSize:"9px",
+          border: "1px solid #1E82D2",
+          color: "#1E82D2",
+        }
 }))
 
-const Pin = ({open,setOpen}) => {
+const Code = ({open,setOpen}) => {
     const classes = useStyle();
 
     const handleClose = () => {
@@ -58,20 +66,25 @@ const Pin = ({open,setOpen}) => {
             </Avatar>
           </DialogTitle> 
           <DialogContent>
-            <div style={{marginLeft:"11.2vw",marginTop:"1vh"}}>
+            <div style={{marginLeft:"9.5vw",marginTop:"1vh"}}>
               <form>
+              <input type="text" maxlength="1" className={classes.form}/>
+              <input type="text" maxlength="1" className={classes.form}/>
               <input type="text" maxlength="1" className={classes.form}/>
               <input type="text" maxlength="1" className={classes.form}/>
               <input type="text" maxlength="1" className={classes.form}/>
               <input type="text" maxlength="1" className={classes.form}/>
               </form>
             </div>
-          <DialogContentText style={{marginLeft:"13vw",marginTop:"2vh",fontSize:"10px"}}>
-            Please type your PIN
+          <DialogContentText style={{marginLeft:"8.5vw",marginTop:"2vh",fontSize:"11px"}}>
+            Please enter the 6-digit code sent to you
           </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button variant="contained" onClick={handleClose} className={classes.button}>
+            <Button variant="outlined" className={classes.button1}>
+              Resend Code
+            </Button>
+            <Button variant="contained" href="/changepass" className={classes.button}>
               Submit
             </Button>
           </DialogActions>
@@ -80,4 +93,4 @@ const Pin = ({open,setOpen}) => {
     )
 }
 
-export default Pin
+export default Code

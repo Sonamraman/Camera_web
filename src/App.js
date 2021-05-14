@@ -3,11 +3,10 @@ import './App.css';
 import Drawerr from './component/Drawerr';
 import HomeCar from './component/HomeCar';
 import Account from './pages/Account';
-import Activity from './pages/Activity';
+import Activity from './pages/activity/Activity';
 import Changename from './pages/ChangeData/Changename';
 import Home from './pages/home/Home';
-import Login from './pages/Login';
-import LoginField from './pages/Login';
+import Login from './pages/login/Login';
 import Newdevice from './pages/device/Newdevice';
 import Share from './pages/Share';
 import Signup from './pages/Signup';
@@ -17,13 +16,16 @@ import ViewAll from './pages/VewAll';
 import configStore from './redux/store/store';
 import CameraScreen from './pages/CameraScreen';
 import Changepassword from './pages/ChangeData/Changepassword';
+import Forgetpassword from './pages/login/Forgetpassword';
+import Changepass from './pages/login/Changepass';
+import Routes from './router/routes';
 
 function App() {
  const store = configStore()
   return (
    <>
    <Provider store={store}> 
-   <CameraScreen/>
+   <Routes/>
    </Provider>
    </>
   );

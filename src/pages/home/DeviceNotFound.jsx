@@ -67,7 +67,7 @@ const DeviceNotFound = ({open,setOpen}) => {
           </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button variant="contained" onClick={handleClose} color="primary" className={classes.button}>
+            <Button variant="contained" onClick={handleClose} className={classes.button}>
               Try Again
             </Button>
           </DialogActions>

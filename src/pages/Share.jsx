@@ -16,6 +16,20 @@ import {
 import CloseIcon from "@material-ui/icons/Close";
 
 const useStyle = makeStyles((theme) => ({
+  head:{
+    color:"black",
+    fontWeight:"bold", 
+    marginLeft: "15.6vw", 
+    marginTop: "4vh", 
+    fontSize: "22px" 
+  },
+  avatar:{
+    marginTop: "-7vh",
+    marginLeft: "40vw",
+    backgroundColor: "#E02020",
+    height: "5vh",
+    width: "2.5vw",
+  },
   form: {
     width: "2vw",
     height: "8vh",
@@ -27,6 +41,36 @@ const useStyle = makeStyles((theme) => ({
     fontSize: "40px",
     fontWeight: "bold",
     color: "#0A0F2D",
+  },
+  input:{
+    backgroundColor: "#C7C7C7",
+    borderColor: "#C7C7C7",
+    borderRadius: "3px",
+    height: "4vh",
+    width: "18vw",
+    fontSize: "9px",
+  },
+  button:{
+    backgroundColor: "#0A0F2D",
+    color: "white",
+    border: "none",
+    borderRadius: "2px",
+    height: "4vh",
+    width: "10vw",
+    fontSize: "9px",
+  },
+  or:{
+    color:"black", 
+    marginLeft: "20.3vw", 
+    marginTop: "1vh", 
+    fontSize: "9px" 
+  },
+  link:{
+    margin: "-3vh 20.3vw 2vh",
+    height: "4.5vh",
+    width: "8vw",
+    fontSize: "9px",
+    color: "#0091FF",
   },
 }));
 
@@ -41,20 +85,12 @@ const Share = ({ opendialog, setOpendialog }) => {
     <div>
       <Dialog open={opendialog}>
         <DialogTitle>
-          <div style={{color:"black",fontWeight:"bold", marginLeft: "15.6vw", marginTop: "4vh", fontSize: "22px" }}>
+          <div className={classes.head} >
           Share the app
           </div>
-          <Avatar
-            aria-label="close"
-            onClick={handleClose}
-            style={{
-              marginTop: "-7vh",
-              marginLeft: "40vw",
-              backgroundColor: "#E02020",
-              height: "5vh",
-              width: "2.5vw",
-            }}
-          ><CloseIcon /></Avatar>
+          <Avatar aria-label="close" onClick={handleClose} className={classes.avatar}>
+            <CloseIcon />
+          </Avatar>
         </DialogTitle>
         <DialogContent>
           <div style={{textAlign: "center",fontSize: "12px",}}>
@@ -70,44 +106,18 @@ const Share = ({ opendialog, setOpendialog }) => {
               placeholder="Enter Email Address"
               height="5vh"
               width="10vw"
-              style={{
-                backgroundColor: "#C7C7C7",
-                borderColor: "#C7C7C7",
-                borderRadius: "3px",
-                height: "4vh",
-                width: "18vw",
-                fontSize: "9px",
-              }}
+              className={classes.input}
             />
-            <input
-              type="submit"
-              value="Share link"
-              onClick={handleClose}
-              style={{
-                backgroundColor: "#0A0F2D",
-                color: "white",
-                border: "none",
-                borderRadius: "2px",
-                height: "4vh",
-                width: "10vw",
-                fontSize: "9px",
-              }}
-            />
+            <Button onClick={handleClose} className={classes.button}>
+              Share link
+            </Button>
           </div>
-          <DialogContentText style={{color:"black", marginLeft: "20.3vw", marginTop: "1vh", fontSize: "9px" }}>
+          <DialogContentText className={classes.or}>
             or
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Link
-            style={{
-              margin: "-3vh 20.3vw 2vh",
-              height: "4.5vh",
-              width: "8vw",
-              fontSize: "9px",
-              color: "#0091FF",
-            }}
-          >
+          <Link className={classes.link}>
             Copy Link
           </Link>
         </DialogActions>

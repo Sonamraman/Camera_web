@@ -22,6 +22,13 @@ const useStyle = makeStyles((theme) => ({
     fontWeight:"bold",
     fontSize:"20px"
   },
+  button:{
+    width: "20vw",
+    marginTop: "40vh",
+    marginLeft: "8vw",
+    color:"white",
+    backgroundColor:"#1E82D2"
+  }
 }));
 
 const Changename = ({showname,setShowname}) => {
@@ -34,17 +41,7 @@ const Changename = ({showname,setShowname}) => {
         <form className={classes.form} noValidate>
           <label for="fname" style={{ opacity: "80%",fontSize:"12px"}}>Name</label><br/>
           <input type="text" id="fname" name="fname" value="Tomas Wilson" className={classes.text}/>
-          <Button
-            variant="contained"
-            onClick={()=>setShowname(false)}
-            style={{
-              width: "20vw",
-              marginTop: "40vh",
-              marginLeft: "8vw",
-              color:"white",
-              backgroundColor:"#2168A0"
-            }}
-          >
+          <Button variant="contained" className={classes.button} onClick={()=>setShowname(false)}>
             Save
           </Button>
         </form>

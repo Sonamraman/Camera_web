@@ -1,19 +1,20 @@
 import React from 'react'
 import { Grid, makeStyles, Typography } from "@material-ui/core";
-import img from "../assest/home.png";
-import group from "../assest/Group.png";
+import img from "../../assest/home.png";
+import group from "../../assest/Group.png";
 import Button from "@material-ui/core/Button";
-import Homecar from "../component/HomeCar";
+import Homecar from "../../component/HomeCar";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
-import google from "../assest/google-button.png";
-import facebook from "../assest/facebook-button.svg";
-import insta from "../assest/instagram-button.svg";
-import car from "../assest/car.jpg";
+import google from "../../assest/google-button.png";
+import facebook from "../../assest/facebook-button.svg";
+import insta from "../../assest/instagram-button.svg";
+import car from "../../assest/car.jpg";
 import { useSelector, useDispatch } from "react-redux";
+import Forgetpassword from './Forgetpassword';
 
 const Login = () => {
 
@@ -62,6 +63,12 @@ const Login = () => {
   }));
 
   const classes = useStyle();
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
   return (
     <>
@@ -137,7 +144,7 @@ const Login = () => {
               >
                 Sign In
               </Button>
-              <Link href="#" variant="body2" style={{color:"#0091FF"}}>
+              <Link href="/forgetpassword" variant="body2" style={{color:"#0091FF"}}>
                 Forgot password?
               </Link>
               <Typography className={classes.typo}>or login with</Typography>

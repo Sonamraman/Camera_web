@@ -1,23 +1,27 @@
 import React from 'react'
 import {BrowserRouter,Switch,Route} from 'react-router-dom'
 import Account from '../pages/Account'
-import Activity from '../pages/Activity'
-import Home from '../pages/Home'
-import Login from '../pages/Login'
-import Newdevice from '../pages/Newdevice'
+import Activity from '../pages/activity/Activity'
+import Home from '../pages/home/Home'
+import Login from '../pages/login/Login'
+import Changepass from '../pages/login/Changepass'
+import Forgetpassword from '../pages/login/Forgetpassword'
+import Newdevice from '../pages/device/Newdevice'
 import Share from '../pages/Share'
 import Signup from '../pages/Signup'
-import Subscription from '../pages/Subscription'
-import Subscription2 from '../pages/Subscription2'
+import Subscription from '../pages/Subscription/Subscription'
+import Subscription2 from '../pages/Subscription/Subscription2'
 import ViewAll from '../pages/VewAll'
 
 const Routes = () => {
     return (
         <BrowserRouter>
         <Switch>
-            <Route exact path = '/' component = {Home}/>
-            <Route exact path = '/login' component = {Login}/>
+            <Route exact path = '/' component = {Login}/>
+            <Route exact path = '/forgetpassword' component = {Forgetpassword}/>
+            <Route exact path = '/changepass' component = {Changepass}/>
             <Route exact path = '/signup' component = {Signup}/>
+            <Route exact path = '/home' component = {Home}/>
             <Route exact path = '/account' component = {Account}/>
             <Route exact path = '/device' component = {Newdevice}/>
             <Route exact path = '/activity' component = {Activity}/>

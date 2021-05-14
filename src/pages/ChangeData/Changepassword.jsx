@@ -7,12 +7,13 @@ const useStyle = makeStyles((theme) => ({
       height:"85vh",
       padding: theme.spacing(4),
     },
-    text: {
-      marginTop: "3vh",
-    },
     form: {
       width: "100%",
       marginTop: theme.spacing(7),
+    },
+    label:{
+      opacity: "80%",
+      fontSize:"12px",
     },
     text: {
       paddingBottom:"0.8vh",
@@ -25,6 +26,13 @@ const useStyle = makeStyles((theme) => ({
       fontWeight:"bold",
       fontSize:"20px"
     },
+    button:{
+      width: "20vw",
+      marginTop: "20vh",
+      marginLeft: "8vw",
+      color:"white",
+      backgroundColor:"#1E82D2"
+    }
   }));
 
 const Changepassword = ({showpass,setShowpass}) => {
@@ -34,28 +42,19 @@ const Changepassword = ({showpass,setShowpass}) => {
             <Paper className={classes.paper}>
             <Typography variant="h6" style={{fontWeight:"bold"}}>Change Password</Typography>
             <form className={classes.form} noValidate>
-              <label for="old password" style={{ opacity: "80%",fontSize:"12px"}}>Old Password</label><br/>
+              <label for="old password" className={classes.label}>Old Password</label><br/>
               <input type="password" id="old" name="old" value="vtrvgtr" className={classes.text}/>
               <div style={{marginTop:"2vh",}}>
-              <label for="new password" style={{marginTop:"5vh", opacity: "80%",fontSize:"12px"}}>New Password</label><br/>
+              <label for="new password" className={classes.label}>New Password</label><br/>
               <input type="password" id="new" name="new" value="crfvt" className={classes.text}/>
               </div>
               <div style={{marginTop:"2vh",}}>
-              <label for="re password" style={{ opacity: "80%",fontSize:"12px"}}>Re-Password</label><br/>
+              <label for="re password" className={classes.label}>Re-Password</label><br/>
               <input type="password" id="re" name="re" value="dvtbtyhn" className={classes.text}/>
               </div>
-              <Button
-                variant="contained"
-                onClick={()=>setShowpass(false)}
-                style={{
-                  width: "20vw",
-                  marginTop: "20vh",
-                  marginLeft: "8vw",
-                  color:"white",
-                  backgroundColor:"#2168A0"
-                }}>
-                 Save
-                </Button>
+              <Button variant="contained" className={classes.button} onClick={()=>setShowpass(false)}>
+                Save
+              </Button>
               </form>
             </Paper>
         </div>

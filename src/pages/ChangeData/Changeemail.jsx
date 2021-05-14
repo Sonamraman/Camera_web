@@ -7,14 +7,12 @@ const useStyle = makeStyles((theme) => ({
       height:"85vh",
       padding: theme.spacing(4),
     },
-    text: {
-      marginTop: "3vh",
-    },
     form: {
       width: "100%",
       marginTop: theme.spacing(7),
     },
     text: {
+      marginTop: "3vh",
       paddingBottom:"0.8vh",
       width: "100%",
       marginTop: "9px",
@@ -25,6 +23,13 @@ const useStyle = makeStyles((theme) => ({
       fontWeight:"bold",
       fontSize:"20px"
     },
+    button:{
+      width: "20vw",
+      marginTop: "40vh",
+      marginLeft: "8vw",
+      color:"white",
+      backgroundColor:"#1E82D2"
+    }
   }));
 
 const Changeemail = ({showemail,setShowemail}) => {
@@ -36,16 +41,7 @@ const Changeemail = ({showemail,setShowemail}) => {
             <form className={classes.form} noValidate>
               <label for="email" style={{ opacity: "80%",fontSize:"12px"}}>Email</label><br/>
               <input type="email" id="email" name="email" value="luckytom@rach" className={classes.text}/>
-              <Button
-               variant="contained"
-               onClick={()=>setShowemail(false)}
-               style={{
-                width: "20vw",
-                marginTop: "40vh",
-                marginLeft: "8vw",
-                color:"white",
-                backgroundColor:"#2168A0"
-               }}>
+              <Button variant="contained" className={classes.button} onClick={()=>setShowemail(false)}>
                Save
               </Button>
             </form>

@@ -70,7 +70,7 @@ const Devicename = ({open,setOpen}) => {
             </div>
           </DialogContent>
           <DialogActions>
-            <Button variant="contained" onClick={handleClose} color="primary" className={classes.button}>
+            <Button variant="contained" onClick={handleClose} className={classes.button}>
               Save
             </Button>
           </DialogActions>
