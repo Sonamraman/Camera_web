@@ -59,12 +59,8 @@ const Changepass = () => {
             <Paper className={classes.paper}>
             <Typography className={classes.head}>Change Password</Typography>
             <form style={{margin:"4vh 6vw 0",}}>
-              <label for="old password" style={{ opacity: "80%",fontSize:"12px"}}>Old Password</label><br/>
-              <input type="password" id="old" name="old" value="" className={classes.text}/>
-              <div style={{marginTop:"2vh",}}>
               <label for="new password" style={{marginTop:"5vh", opacity: "80%",fontSize:"12px"}}>New Password</label><br/>
               <input type="password" id="new" name="new" value="" className={classes.text}/>
-              </div>
               <div style={{marginTop:"2vh",}}>
               <label for="re password" style={{ opacity: "80%",fontSize:"12px"}}>Re-Password</label><br/>
               <input type="password" id="re" name="re" value="" className={classes.text}/>

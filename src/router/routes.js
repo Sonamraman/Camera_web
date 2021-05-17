@@ -12,6 +12,8 @@ import Signup from '../pages/Signup'
 import Subscription from '../pages/Subscription/Subscription'
 import Subscription2 from '../pages/Subscription/Subscription2'
 import ViewAll from '../pages/VewAll'
+import CameraScreen from '../pages/camera/CameraScreen'
+import Camerafullscreen from '../pages/camera/Camerafullscreen'
 
 const Routes = () => {
     return (
@@ -29,6 +31,8 @@ const Routes = () => {
             <Route exact path = '/subscription' component = {Subscription}/>
             <Route exact path = '/subscription2' component = {Subscription2}/>
             <Route exact path = '/share' component = {Share}/>
+            <Route exact path = '/camerascreen' component = {CameraScreen}/>
+            <Route exact path = '/fullscreen' component = {Camerafullscreen}/>
         </Switch>
         </BrowserRouter>
     )

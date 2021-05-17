@@ -1,24 +1,18 @@
-
-
-
 const initialState = {
-isHouse:true
+ isHouse:true
 }
 
 
 export default (state=initialState, {type,payload}) => {
 
-switch(type){
+  switch(type){
 
-case "changeMode" : return {
+    case "changeMode" : return {
     ...state ,
     isHouse: !state.isHouse
-}
+    }
 
-default: return state;
-
-
-}
-
+    default: return state;
+  }
 
 }

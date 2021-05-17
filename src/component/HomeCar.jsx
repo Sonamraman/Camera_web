@@ -40,11 +40,16 @@ import { changeMode } from "../redux/action/action";
     <>
     <Grid container justify="center" component="main" className={classes.root}>
 
-    {/* <Button className={classes.home} disableRipple={true} onClick = {()=>setIsHouse(!isHouse)}><HomeIcon /></Button>
-    <Button className={classes.car} onClick = {()=>setIsHouse(!isHouse)}><DirectionsCarIcon /></Button> */}
+    {/* <Button className={classes.home} onClick = {()=>setIsHouse(true)}><HomeIcon /></Button>
+    <Button className={classes.car} onClick = {()=>setIsHouse(false)}><DirectionsCarIcon /></Button> */}
 
-    <Button className={classes.home}  onClick = {()=>dispatch(changeMode())}><HomeIcon /></Button>
-    <Button className={classes.car} onClick = {()=>dispatch(changeMode())}><DirectionsCarIcon /></Button>
+    <Button className={classes.home}  onClick = {()=>dispatch(changeMode())}>
+      <HomeIcon />
+    </Button>
+    <Button className={classes.car} onClick = {()=>dispatch(changeMode())}>
+      <DirectionsCarIcon />
+    </Button>
+
     </Grid>
     </>
   );

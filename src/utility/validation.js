@@ -8,3 +8,7 @@ export const validatePassword = (password) => {
     return re.test(password);
 }
 
+export const validatePincode = (pincode) => {
+    const re = /^[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3}$/;
+    return re.test(pincode);
+}

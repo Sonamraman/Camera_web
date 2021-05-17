@@ -28,7 +28,10 @@ const useStyle = makeStyles((theme) => ({
       marginTop: "40vh",
       marginLeft: "8vw",
       color:"white",
-      backgroundColor:"#1E82D2"
+      backgroundColor:"#1E82D2",
+      '&:hover':{
+        backgroundColor: "#1E82D2",
+      }
     }
   }));
 

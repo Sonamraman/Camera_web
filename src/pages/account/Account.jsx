@@ -2,22 +2,10 @@ import React,{useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawerr from "../../component/Drawerr";
 import {
-  Avatar,
-  IconButton,
-  Button,
-  Paper,
-  Grid,
-  TextField,
-  Typography,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
+  Avatar,IconButton,Paper,Grid,Typography,
 } from "@material-ui/core";
 import profile from "../../assest/avatar.png";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import CloseIcon from '@material-ui/icons/Close';
 import Pin from "./Pin";
 import Changename from "./Changename";
 import Changeemail from "./Changeemail";
@@ -69,11 +57,6 @@ const Account = () => {
 
   const handleClickOpen = () => {
     setOpen(true);
-    console.log("open")
-  };
-
-  const handleClose = () => {
-    setOpen(false);
   };
 
   const [showname, setShowname] = useState(false)

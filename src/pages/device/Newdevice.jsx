@@ -19,6 +19,16 @@ const useStyles = makeStyles((theme) => ({
     position:"absolute",
     right:"32vw"
   },
+  button:{
+    height:"4.5vh",
+    width:"16vw",
+    fontSize:"10px",
+    backgroundColor: "#1E82D2",
+    color: "white",
+    '&:hover':{
+      backgroundColor: "#1E82D2",
+    }
+  },
 }));
 
 const Newdevice = () => {
@@ -44,8 +54,8 @@ const Newdevice = () => {
             Camera Found
           </Typography>
         </div>
-        <div style={{ marginLeft: "29vw", marginTop: "2vh" }}>
-          <Button variant="contained" color="primary" style={{ width: "20vw" }}>
+        <div style={{ marginLeft: "31vw", marginTop: "2vh" }}>
+          <Button variant="contained" className={classes.button}>
             Connect
           </Button>
         </div>

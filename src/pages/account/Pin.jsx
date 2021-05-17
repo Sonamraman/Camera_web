@@ -38,6 +38,9 @@ const useStyle = makeStyles((theme) => ({
       fontSize:"9px",
       backgroundColor: "#1E82D2",
       color: "white",
+      '&:hover':{
+        backgroundColor: "#1E82D2",
+      }
     }
 }))
 

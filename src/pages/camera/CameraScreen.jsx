@@ -1,7 +1,7 @@
 import React from "react";
-import Drawerr from "../component/Drawerr";
+import Drawerr from "../../component/Drawerr";
 import { makeStyles } from "@material-ui/core/styles";
-import img1 from "../assest/img1.png";
+import img1 from "../../assest/img1.png";
 import { Grid, IconButton, Typography } from "@material-ui/core";
 import ShareIcon from "@material-ui/icons/Share";
 import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
@@ -11,7 +11,7 @@ import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import WifiIcon from "@material-ui/icons/Wifi";
 import Battery90Icon from "@material-ui/icons/Battery90";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
-import Sharevideo from "./Sharevideo";
+import Sharevideo from "../Sharevideo";
 
 const useStyle = makeStyles((theme) => ({
   drawer: {
@@ -25,10 +25,11 @@ const useStyle = makeStyles((theme) => ({
   },
   play: {
     width: "fit-content",
-    marginLeft: "-26vw",
+    marginLeft: "-29vw",
     marginTop: "38vh",
     borderRadius: "25px",
     backgroundColor: "rgb(220 216 216 / 54%)",
+    color:"black"
   },
 }));
 const tiers = [
@@ -84,7 +85,7 @@ const CameraScreen = () => {
                   Home Entrance
                 </Typography>
                 <Typography variant="small" style={{ display: "flex" }}>
-                  <FiberManualRecordIcon />
+                  <FiberManualRecordIcon style={{color:"green"}}/>
                   Live
                 </Typography>
               </Grid>
@@ -95,14 +96,20 @@ const CameraScreen = () => {
                 </div>
               </Grid>
               <div className={classes.play}>
-                <IconButton style={{color:"black" }} >
-                  <div onClick={handleShareOpen}>
-                  <ShareIcon style={{ marginRight: "6vw" }} />
-                  </div>
+                <IconButton onClick={handleShareOpen} style={{ marginLeft:"0vw" }} >
+                  <ShareIcon />
+                </IconButton>
+                <IconButton style={{ marginLeft: "5vw" }}>
                   <NavigateBeforeIcon />
+                </IconButton>
+                <IconButton>
                   <PauseCircleOutlineIcon />
-                  <NavigateNextIcon style={{ marginRight: "6vw" }} />
-                  <FullscreenExitIcon style={{ marginRight: "0vw" }} />
+                </IconButton>
+                <IconButton>
+                  <NavigateNextIcon />
+                </IconButton>
+                <IconButton style={{ marginLeft: "4vw"  }}>
+                  <FullscreenExitIcon />
                 </IconButton>
               </div>
 

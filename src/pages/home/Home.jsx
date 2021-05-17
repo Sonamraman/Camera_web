@@ -3,7 +3,6 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Avatar,
-  CardHeader,
   Grid,
   Paper,
   Container,
@@ -26,60 +25,6 @@ import HomeCar from "../../component/HomeCar";
 import Addcamera from "./Addcamera";
 import DeviceNotFound from "./DeviceNotFound";
 import Sharevideo from "../Sharevideo";
-import Call from "../activity/Call";
-
-const useStyles = makeStyles((theme) => ({
-  main: {
-    display: "flex",
-  },
-  drawer: {
-    justifyContent: "flex-start",
-  },
-  home: {
-    justifyContent: "flex-end",
-  },
-  avatar: {
-    backgroundColor: "#1E82D2",
-  },
-  root: {
-    display: "flex",
-    justifyContent: "space-between",
-    minWidth: "80vw",
-  },
-  homecar: {
-    position:"absolute",
-    right:"34vw",
-    marginTop: "3vh",
-    float:"center",
-  },
-  icon1: {
-    position: "absolute",
-    right: "1vw",
-    marginTop: "4vh",
-    color: "#1678f1",
-  },
-  container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
-  },
-  paper: {
-    padding: theme.spacing(2),
-    display: "flex",
-    overflow: "auto",
-    flexDirection: "column",
-  },
-  fixedHeight: {
-    height: "50vh",
-    width: "50vw",
-  },
-  play:{
-    width:"35vw",
-    marginLeft: "5vw",
-    marginTop: "27vh",
-    borderRadius: "25px",
-    backgroundColor:"rgb(207 239 243)" 
-  },
-}));
 
 const tiers = [
   {
@@ -87,13 +32,44 @@ const tiers = [
     title: " Home Entrance",
     subheader: "Live",
   },
+  {
+    video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
+    title: " Kitchen",
+    subheader: "Live",
+  },
+  {
+    video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
+    title: " Bedroom",
+    subheader: "Live",
+  },
+  {
+    video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
+    title: " Kitchen 2",
+    subheader: "Live",
+  },
+  {
+    video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
+    title: " Guest Room",
+    subheader: "Live",
+  },
+  {
+    video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
+    title: " Terrace",
+    subheader: "Live",
+  },
+  {
+    video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
+    title: " Hall",
+    subheader: "Live",
+  },
+  {
+    video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
+    title: " Bedroom 2",
+    subheader: "Live",
+  },
 ];
 
 const Home = () => {
-  const classes = useStyles();
-
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-  const [invisible, setInvisible] = React.useState(false);
 
   const [open, setOpen] = React.useState(false);
 
@@ -107,13 +83,107 @@ const Home = () => {
     setShare(true);
   };
 
+  const [toggle, setToggle] = React.useState(true)
+
+  const useStyles = makeStyles((theme) => ({
+    main: {
+      display: "flex",
+    },
+    drawer: {
+      justifyContent: "flex-start",
+    },
+    home: {
+      justifyContent: "flex-end",
+    },
+    avatar: {
+      backgroundColor: "#1E82D2",
+    },
+    root: {
+      display: "flex",
+      justifyContent: "space-between",
+      minWidth: "80vw",
+    },
+    homecar: {
+      position:"absolute",
+      right:"34vw",
+      marginTop: "3vh",
+      float:"center",
+    },
+    icons: {
+      display:"flex",
+      position: "absolute",
+      right: "1vw",
+      marginTop: "1vh",
+    },
+    container: {
+      paddingTop: theme.spacing(2),
+    },
+    icon1:{
+      color: toggle ? "#1678f1":"#979797",
+    },
+    icon2:{
+      color: !toggle ? "#1678f1":"#979797",
+      marginLeft:"-2vh",
+    },
+    item1:{
+      margin:"2vh 0 0 "
+    },
+    item2:{
+      display:"flex",
+      flexWrap: "wrap",
+      margin:"2vh 2vw 0 0"
+    },
+    paper1: {
+      padding: theme.spacing(2),
+      display: "flex",
+      overflow: "auto",
+      flexDirection: "column",
+      height: "50vh",
+      width: "50vw",
+    },
+    paper2: {
+      padding: theme.spacing(2),
+      display: "flex",
+      overflow: "auto",
+      flexDirection: "column",
+      height: "30vh",
+      width: "23vw",
+    },
+    headicon1:{
+      marginLeft:"30vw",
+      marginTop: "1vh",
+    },
+    headicon2:{
+      marginLeft:"4vw",
+      marginTop: "0.8vh",
+    },
+    play1:{
+      width:"fit-content",
+      marginLeft:"5.5vw",
+      marginTop: "27vh",
+      borderRadius: "25px",
+      backgroundColor:"rgb(207 239 243)" 
+    },
+    play2:{
+      width:"fit-content",
+      marginLeft:"0vw",
+      marginTop: "10vh",
+      borderRadius: "25px",
+      backgroundColor:"rgb(207 239 243)" 
+    },
+  }));
+
+  const classes = useStyles();
+
   return (
     <div className={classes.main}>
       <div className={classes.drawer}>
-        <Drawerr />
+        <Drawerr/>
       </div>
       <div className={classes.home}>
+        
         <div className={classes.root}>
+
           <div style={{display:"flex",marginTop:"1.5vh"}}>
             <div onClick={handleClickOpen} style={{justifyContent:"flex-start", marginLeft: "1vw",marginTop:"1vh"}}>
               <Avatar aria-label="recipe" className={classes.avatar} >
@@ -136,51 +206,63 @@ const Home = () => {
           <div className={classes.homecar}>
             <HomeCar />
           </div>
-          <div className={classes.icon1}>
-            <ViewHeadlineIcon />
-            <ViewComfyIcon />
+
+          <div className={classes.icons}>
+            <IconButton onClick = {()=>setToggle(true)} className={classes.icon1}>
+              <ViewHeadlineIcon />
+            </IconButton>
+            <IconButton onClick = {()=>setToggle(false)} className={classes.icon2}>
+              <ViewComfyIcon />
+            </IconButton>
           </div>
+
         </div>
+
+
         <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                {tiers.map((tier) => (
-                  <Grid container style={{ marginLeft: "1vw", marginTop: "0.5vh",}}>
+          <div className={toggle ? classes.item1 : classes.item2}>
+            {tiers.map((tier) => (
+              <div style={{marginTop:"2vh", marginRight:"1vw"}}>
+                <Paper className={toggle ? classes.paper1 : classes.paper2}>
+                  <Grid container  style={{ marginLeft: toggle ? "1vw" : "0.5vw", marginTop: toggle ? "0.5vh" : "-1.3vh",}}>
                     <Grid item>
                       <Typography variant="h6" fontWeight="350">
                         {tier.title}
                       </Typography>
                       <Typography variant="small" style={{display:"flex"}}>
-                        <FiberManualRecordIcon/>{tier.subheader}
+                        <FiberManualRecordIcon style={{color:"green"}} />{tier.subheader}
                       </Typography>
                     </Grid>
-                    <Grid item style={{ marginLeft: "28vw", marginTop: "0.5vh",}}>
+                    <Grid item className={toggle ? classes.headicon1 : classes.headicon2}>
                       <Battery90Icon/>
                       <div style={{marginLeft:"3vw",marginTop:"-4.5vh"}}>
                        <WifiIcon />
                       </div>
                     </Grid>
-                    <div className={classes.play}>
-                      <IconButton >
-                        <div onClick={handleShareOpen}>
-                        <ShareIcon style={{ marginRight: "12vw" }} />
-                        </div>
+                    <div className={toggle ? classes.play1 : classes.play2}>
+                      <IconButton onClick={handleShareOpen} style={{ marginLeft: toggle ? "0.5vw" : "0vw" }} >
+                        <ShareIcon />
+                      </IconButton>
+                      <IconButton style={{ marginLeft: toggle ? "8vw" : "1vw" }}>
                         <NavigateBeforeIcon />
+                      </IconButton>
+                      <IconButton>
                         <PauseCircleOutlineIcon />
-                        <NavigateNextIcon style={{ marginRight: "12vw" }} />
-                        <FullscreenExitIcon style={{ marginRight: "2vw" }} />
+                      </IconButton>
+                      <IconButton>
+                        <NavigateNextIcon />
+                      </IconButton>
+                      <IconButton style={{ marginLeft: toggle ? "7vw" : "0.5vw" }}>
+                        <FullscreenExitIcon />
                       </IconButton>
                     </div>
-
-                    <Sharevideo share={share} setShare={setShare}/>
-
                   </Grid>
-                ))}
-              </Paper>
-            </Grid>
-          </Grid>
+                </Paper>
+              </div>
+            ))} 
+          </div>
         </Container>
+        <Sharevideo share={share} setShare={setShare}/>
       </div>
     </div>
   );

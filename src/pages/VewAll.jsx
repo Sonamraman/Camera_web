@@ -69,8 +69,8 @@ const useStyle = makeStyles((theme) => ({
     color: "#333333",
   },
   play:{
-    width:"25vw",
-    marginLeft: "1vw",
+    width:"23vw",
+    marginRight: "2vw",
     borderRadius: "25px",
     backgroundColor:"rgba(255, 255, 255, 0.54)",
     blur:"1"
@@ -100,17 +100,25 @@ const ViewAll = () => {
             {tiers.map((tier) => (
               <GridListTile>
                 <img src={tier.img} />
-                <GridListTileBar className={classes.play}
+                <GridListTileBar
                   actionIcon={
-                    <IconButton className={classes.icon}>
-                      <div onClick={handleShareOpen}>
-                      <ShareIcon style={{ marginRight: "6vw" }} />
-                      </div>
-                      <NavigateBeforeIcon />
-                      <PauseCircleOutlineIcon />
-                      <NavigateNextIcon style={{ marginRight: "6vw" }} />
-                      <FullscreenExitIcon style={{ marginRight: "2vw" }} />
-                    </IconButton>
+                    <div className={classes.play}>
+                      <IconButton onClick={handleShareOpen} style={{ marginLeft: "0.5vw" }} >
+                        <ShareIcon />
+                      </IconButton>
+                      <IconButton style={{ marginLeft: "1.6vw" }}>
+                        <NavigateBeforeIcon />
+                      </IconButton>
+                      <IconButton>
+                        <PauseCircleOutlineIcon />
+                      </IconButton>
+                      <IconButton  >
+                        <NavigateNextIcon />
+                      </IconButton>
+                      <IconButton style={{ marginLeft: "1.8vw" }}>
+                        <FullscreenExitIcon  />
+                      </IconButton>
+                    </div>
                   }
                 /> 
               </GridListTile>
