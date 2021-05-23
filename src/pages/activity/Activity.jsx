@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid, makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
 import Drawerr from "../../component/Drawerr";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -56,6 +56,7 @@ const tiers = [
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
 ];
+
 const Activity = () => {
   const classes = useStyle();
 

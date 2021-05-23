@@ -1,8 +1,7 @@
 import React from "react";
 import Drawerr from "../../component/Drawerr";
 import { makeStyles } from "@material-ui/core/styles";
-import img1 from "../../assest/img1.png";
-import { Grid, IconButton, Typography,Paper } from "@material-ui/core";
+import { IconButton, Typography,Paper } from "@material-ui/core";
 import ShareIcon from "@material-ui/icons/Share";
 import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
 import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";

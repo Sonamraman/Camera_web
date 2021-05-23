@@ -1,5 +1,4 @@
 import React from "react";
-import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Avatar,
@@ -29,42 +28,47 @@ import Sharevideo from "../Sharevideo";
 const tiers = [
   {
     video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
-    title: " Home Entrance",
+    title: "Home Entrance",
     subheader: "Live",
   },
   {
     video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
-    title: " Kitchen",
+    title: "Kitchen",
     subheader: "Live",
   },
   {
     video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
-    title: " Bedroom",
+    title: "Bedroom",
     subheader: "Live",
   },
   {
     video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
-    title: " Kitchen 2",
+    title: "Kitchen 2",
     subheader: "Live",
   },
   {
     video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
-    title: " Guest Room",
+    title: "Guest Room",
     subheader: "Live",
   },
   {
     video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
-    title: " Terrace",
+    title: "Terrace",
     subheader: "Live",
   },
   {
     video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
-    title: " Hall",
+    title: "Hall",
     subheader: "Live",
   },
   {
     video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
-    title: " Bedroom 2",
+    title: "Bedroom 2",
+    subheader: "Live",
+  },
+  {
+    video: "https://www.youtube.com/watch?v=8WLeWKLPBSU",
+    title: "Guest Room 2",
     subheader: "Live",
   },
 ];
@@ -222,7 +226,7 @@ const Home = () => {
         <Container maxWidth="lg" className={classes.container}>
           <div className={toggle ? classes.item1 : classes.item2}>
             {tiers.map((tier) => (
-              <div style={{marginTop:"2vh", marginRight:"1vw"}}>
+              <div style={{marginTop:"2vh", marginRight:"1.5vw"}}>
                 <Paper className={toggle ? classes.paper1 : classes.paper2}>
                   <Grid container  style={{ marginLeft: toggle ? "1vw" : "0.5vw", marginTop: toggle ? "0.5vh" : "-1.3vh",}}>
                     <Grid item>
@@ -262,7 +266,7 @@ const Home = () => {
             ))} 
           </div>
         </Container>
-        <Sharevideo share={share} setShare={setShare}/>
+      <Sharevideo share={share} setShare={setShare}/>
       </div>
     </div>
   );

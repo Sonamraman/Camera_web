@@ -1,15 +1,7 @@
 import React from 'react'
 import {
     makeStyles,
-    Paper,
-    Avatar,
-    Button,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-    Typography,
+    Paper,Button,Typography,
   } from "@material-ui/core";
 import Code from './Code';
 
@@ -40,7 +32,6 @@ const useStyle = makeStyles((theme) => ({
         marginTop: theme.spacing(7),
       },
       text: {
-        marginTop: "3vh",
         paddingBottom:"0.8vh",
         width: "100%",
         marginTop: "9px",
@@ -58,6 +49,9 @@ const useStyle = makeStyles((theme) => ({
       fontSize:"9px",
       backgroundColor: "#1E82D2",
       color: "white",
+      '&:hover':{
+        backgroundColor: "#1E82D2",
+      }
     },
     button1:{
         margin: "25vh 0 1vh 7vw",
@@ -66,6 +60,9 @@ const useStyle = makeStyles((theme) => ({
         fontSize:"9px",
         backgroundColor: "#1E82D2",
         color: "white",
+        '&:hover':{
+          backgroundColor: "#1E82D2",
+        }
       }
 }))
 

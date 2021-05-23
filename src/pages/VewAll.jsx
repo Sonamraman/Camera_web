@@ -1,5 +1,4 @@
 import {
-  Grid,
   GridList,
   GridListTile,
   GridListTileBar,
@@ -99,7 +98,7 @@ const ViewAll = () => {
           <GridList cellHeight={160} className={classes.gridList} cols={3} style={{marginTop:"2vh"}}>
             {tiers.map((tier) => (
               <GridListTile>
-                <img src={tier.img} />
+                <img alt="img" src={tier.img} />
                 <GridListTileBar
                   actionIcon={
                     <div className={classes.play}>

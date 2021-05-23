@@ -1,17 +1,12 @@
 import React from "react";
 import {
   makeStyles,
-  Avatar,
-  Button,
-  Paper,
-  TextField,
-  Typography,
+  Avatar,Link,Button,
   Dialog,
   DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Link,
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 

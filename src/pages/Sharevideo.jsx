@@ -7,7 +7,6 @@ import {
     Dialog,
     DialogActions,
     DialogContent,
-    DialogContentText,
     DialogTitle,
   } from "@material-ui/core";
 import CloseIcon from '@material-ui/icons/Close';
@@ -74,14 +73,14 @@ const Sharevideo = ({share,setShare}) => {
             <div style={{marginLeft:"2vw"}}>
             <CardHeader
               avatar={<Avatar aria-label="recipe">
-                <img src={oval1}/>
+                <img alt={oval1} src={oval1}/>
               </Avatar>}
               title="Luis Calvillo"
               subheader="luiscalvillo@gmail.com"
             />
             <CardHeader
               avatar={<Avatar aria-label="recipe">
-                <img src={oval2}/>
+                <img alt={oval2} src={oval2}/>
               </Avatar>}
               title="Sukhmeet Gorae"
               subheader="sukhmeetgorae@gmail.com"

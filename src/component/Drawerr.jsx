@@ -113,13 +113,7 @@ const Drawerr = () => {
     setOpendialog(true);
   };
 
-  const handleClose = () => {
-    setOpendialog(false);
-  };
-  
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
-  const [invisible, setInvisible] = React.useState(false);
+  const [invisible] = React.useState(false);
 
   return (
     <>
@@ -141,7 +135,7 @@ const Drawerr = () => {
               )}
             >
               <Avatar aria-label="recipe" style={{marginLeft:"-0.8vw",marginTop:"0.9vh"}}>
-                <img src={avatar}/>
+                <img alt="avatar" src={avatar}/>
               </Avatar>
             </IconButton>
           </Toolbar>
@@ -156,7 +150,7 @@ const Drawerr = () => {
           <div className={classes.toolbarIcon}>
             <CardHeader
               avatar={<Avatar aria-label="recipe">
-                <img src={avatar}/>
+                <img alt="avatar" src={avatar}/>
               </Avatar>}
               title="Tomas Wilson"
               subheader="luckytom@rach"

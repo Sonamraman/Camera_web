@@ -93,6 +93,7 @@ const Signup = () => {
           seterrData({ ...errData, pincode: "Please Enter A Valid Pincode" });
         }
       break;
+      default:{}
     }
   };
 
@@ -102,7 +103,7 @@ const Signup = () => {
     <>
       <Grid container className={classes.root}>
         <Grid item xs={false} sm={4} md={7} className={classes.image}>
-          <img
+          <img alt={group}
             src={group}
             style={{ marginLeft: "24vw", marginTop: "25vh", width: "7vw" }}
           />

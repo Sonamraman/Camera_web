@@ -1,5 +1,6 @@
 import { Provider } from 'react-redux';
 import './App.css';
+import configStore from './redux/store/store';
 import Drawerr from './component/Drawerr';
 import HomeCar from './component/HomeCar';
 import Account from './pages/account/Account';
@@ -13,7 +14,6 @@ import Signup from './pages/Signup';
 import Subscription from './pages/Subscription/Subscription';
 import Subscription2 from './pages/Subscription/Subscription2';
 import ViewAll from './pages/VewAll';
-import configStore from './redux/store/store';
 import CameraScreen from './pages/camera/CameraScreen';
 import Camerafullscreen from './pages/camera/Camerafullscreen';
 import Changepassword from './pages/account/Changepassword';

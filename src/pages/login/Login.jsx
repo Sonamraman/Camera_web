@@ -130,6 +130,7 @@ const Login = () => {
         }
         break;
       }
+      default:{}
     }
   };
 
@@ -137,7 +138,7 @@ const Login = () => {
     <>
       <Grid container className={classes.root}>
         <Grid item xs={false} sm={4} md={7} className={classes.image}>
-          <img
+          <img alt="group"
             src={group}
             style={{ marginLeft: "24vw", marginTop: "25vh", width: "7vw" }}
           />

@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Paper,Typography,TextField,Button } from "@material-ui/core";
+import { makeStyles, Paper,Typography,Button } from "@material-ui/core";
 
 const useStyle = makeStyles((theme) => ({
     root:{
@@ -41,6 +41,9 @@ const useStyle = makeStyles((theme) => ({
         fontSize:"9px",
         backgroundColor: "#1E82D2",
         color: "white",
+        '&:hover':{
+          backgroundColor: "#1E82D2",
+        }
       },
       button1:{
           margin: "12vh 0 1vh 7vw",
@@ -49,6 +52,9 @@ const useStyle = makeStyles((theme) => ({
           fontSize:"9px",
           backgroundColor: "#1E82D2",
           color: "white",
+          '&:hover':{
+            backgroundColor: "#1E82D2",
+          }
         }
   }));
 
@@ -62,7 +68,7 @@ const Changepass = () => {
               <label for="new password" style={{marginTop:"5vh", opacity: "80%",fontSize:"12px"}}>New Password</label><br/>
               <input type="password" id="new" name="new" value="" className={classes.text}/>
               <div style={{marginTop:"2vh",}}>
-              <label for="re password" style={{ opacity: "80%",fontSize:"12px"}}>Re-Password</label><br/>
+              <label for="re password" style={{ opacity: "80%",fontSize:"12px"}}>Confirm-Password</label><br/>
               <input type="password" id="re" name="re" value="" className={classes.text}/>
               </div>
               </form>

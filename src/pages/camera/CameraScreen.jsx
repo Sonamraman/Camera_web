@@ -78,7 +78,7 @@ const CameraScreen = () => {
         </div>
         <Grid container>
           <Grid item style={{marginLeft:"3vw",marginTop: "6vh",}}>
-            <img src={img1} style={{height: "52vh",weidth: "52vw",}}/>
+            <img alt="img1" src={img1} style={{height: "52vh",weidth: "52vw",}}/>
             <Grid container style={{ marginLeft: "2vw", marginTop: "-51vh" }}>
               <Grid item>
                 <Typography variant="h6" fontWeight="350">

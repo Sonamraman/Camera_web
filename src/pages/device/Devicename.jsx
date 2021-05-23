@@ -1,23 +1,19 @@
 import React from 'react'
 import {
     makeStyles,
-    Avatar,
-    Button,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
+    Avatar,Button,
+    Dialog,DialogActions,
+    DialogContent,DialogTitle,
   } from "@material-ui/core";
 import CloseIcon from '@material-ui/icons/Close';
 
 const useStyle = makeStyles((theme) => ({
     avatar:{
-        marginTop:"1vh",
-        marginLeft:"30vw",
-        backgroundColor:"#E02020",
-        height:"5vh",
-        width:"2.5vw"
+      marginTop:"1vh",
+      marginLeft:"30vw",
+      backgroundColor:"#E02020",
+      height:"5vh",
+      width:"2.5vw"
     },
     form: {
       width: "100%",
@@ -36,16 +32,16 @@ const useStyle = makeStyles((theme) => ({
       fontSize:"20px"
     },
     button:{
-        margin: "4vh 13vw 5vh",
-        height:"4.5vh",
-        width:"8vw",
-        fontSize:"9px",
+      margin: "4vh 13vw 5vh",
+      height:"4.5vh",
+      width:"8vw",
+      fontSize:"9px",
+      backgroundColor: "#1E82D2",
+      color: "white",
+      '&:hover':{
         backgroundColor: "#1E82D2",
-        color: "white",
-        '&:hover':{
-          backgroundColor: "#1E82D2",
-        }
       }
+    }
   }));
 
 const Devicename = ({open,setOpen}) => {
