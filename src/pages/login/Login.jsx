@@ -163,7 +163,8 @@ const Login = () => {
             incididunt ut labore et dolore magna enim ad minim veniam, quis
             nostrud. Lorem ipsum dolor sit amet, consectetur and it adipiscing
             elit, sed do eiusmod tem incididunt ut labore et dolore magna enim
-            ad minim veniam, quis nostrud.{" "}
+            ad minim veniam, quis nostrud.
+            
           </Typography>
         </Grid>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>

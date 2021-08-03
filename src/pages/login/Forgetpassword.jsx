@@ -90,7 +90,7 @@ const Forgetpassword = () => {
             <Button variant="contained" onClick={handleClickOpen} className={classes.button}>
               Send Code
             </Button>
-            <Button variant="contained" href="/login" className={classes.button1}>
+            <Button variant="contained" href="/" className={classes.button1}>
               Login
             </Button>
 

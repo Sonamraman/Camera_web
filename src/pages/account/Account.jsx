@@ -10,6 +10,7 @@ import Pin from "./Pin";
 import Changename from "./Changename";
 import Changeemail from "./Changeemail";
 import Changepassword from "./Changepassword";
+import Logout from "./Logout";
 
 const useStyle = makeStyles((theme) => ({
   main: {
@@ -57,6 +58,12 @@ const Account = () => {
 
   const handleClickOpen = () => {
     setOpen(true);
+  };
+
+  const [openLog, setOpenLog] = React.useState(false);
+
+  const handleClickOpenLog = () => {
+    setOpenLog(true);
   };
 
   const [showname, setShowname] = useState(false)
@@ -161,14 +168,17 @@ const Account = () => {
               <hr style={{marginTop:"-0.8vh"}}/>
             </div>
 
-            <div style={{marginTop:"-1.1vh"}}>
+            <div style={{marginTop:"-1.1vh"}} onClick={handleClickOpenLog}>
               <Typography variant="caption" style={{marginTop:"-1vh"}}>
                 Logout
               </Typography>
-              <IconButton href="/logout" style={{marginLeft:"11.96vw", color:"black", }}>
+              <IconButton style={{marginLeft:"11.96vw", color:"black", }}>
                 <ArrowForwardIosIcon style={{ fontSize: 15 }}/>
               </IconButton>
             </div>
+
+            <Logout openLog={openLog} setOpenLog={setOpenLog}/>
+            
           </div>
         </Paper>
           </Grid>

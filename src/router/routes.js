@@ -14,6 +14,7 @@ import Subscription2 from '../pages/Subscription/Subscription2'
 import ViewAll from '../pages/VewAll'
 import CameraScreen from '../pages/camera/CameraScreen'
 import Camerafullscreen from '../pages/camera/Camerafullscreen'
+import PrivateRoute from './privateRoute'
 
 const Routes = () => {
     return (
@@ -25,7 +26,7 @@ const Routes = () => {
             <Route exact path = '/signup' component = {Signup}/>
             <Route exact path = '/home' component = {Home}/>
             <Route exact path = '/account' component = {Account}/>
-            <Route exact path = '/device' component = {Newdevice}/>
+            <PrivateRoute exact path = '/device' component = {Newdevice} isAuthenticated={false}/>
             <Route exact path = '/activity' component = {Activity}/>
             <Route exact path = '/viewall' component = {ViewAll}/>
             <Route exact path = '/subscription' component = {Subscription}/>
@@ -33,6 +34,7 @@ const Routes = () => {
             <Route exact path = '/share' component = {Share}/>
             <Route exact path = '/camerascreen' component = {CameraScreen}/>
             <Route exact path = '/fullscreen' component = {Camerafullscreen}/>
+            <Route path = '*' component = {()=>"404 Not Found"}/>
         </Switch>
         </BrowserRouter>
     )
