@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Grid, makeStyles, Typography,Button, TextField,Link,Paper} from "@material-ui/core";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import Homecar from "../component/HomeCar";
 import car from "../assest/car.jpg";
 import img from "../assest/home.png";
@@ -60,7 +60,7 @@ const Signup = () => {
 
   const submit = (event) => {
     event.preventDefault();
-    // history.push("/home");
+    history.push("/home");
 
     if (data.email === "" || data.password === "" || data.pincode === ""|| data.name === "") {
       seterrData({ ...errData, emptyErr: "All fields are required" });
@@ -128,7 +128,7 @@ const Signup = () => {
             incididunt ut labore et dolore magna enim ad minim veniam, quis
             nostrud. Lorem ipsum dolor sit amet, consectetur and it adipiscing
             elit, sed do eiusmod tem incididunt ut labore et dolore magna enim
-            ad minim veniam, quis nostrud.{" "}
+            ad minim veniam, quis nostrud.
           </Typography>
         </Grid>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>

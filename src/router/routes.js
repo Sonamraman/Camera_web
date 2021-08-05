@@ -15,18 +15,21 @@ import ViewAll from '../pages/VewAll'
 import CameraScreen from '../pages/camera/CameraScreen'
 import Camerafullscreen from '../pages/camera/Camerafullscreen'
 import PrivateRoute from './privateRoute'
+import PublicRoute from './publicRoute'
 
 const Routes = () => {
     return (
         <BrowserRouter>
         <Switch>
-            <Route exact path = '/' component = {Login}/>
+            <PublicRoute restricted={false} component={Login} path="/" exact />
+            {/* <Route exact path = '/' component = {Login}/> */}
             <Route exact path = '/forgetpassword' component = {Forgetpassword}/>
             <Route exact path = '/changepass' component = {Changepass}/>
-            <Route exact path = '/signup' component = {Signup}/>
+            {/* <Route exact path = '/signup' component = {Signup}/> */}
+            <PublicRoute restricted={false} component={Signup} path="/signup" exact />
             <Route exact path = '/home' component = {Home}/>
             <Route exact path = '/account' component = {Account}/>
-            <PrivateRoute exact path = '/device' component = {Newdevice} isAuthenticated={false}/>
+            <PrivateRoute exact path = '/device' component = {Newdevice}/>
             <Route exact path = '/activity' component = {Activity}/>
             <Route exact path = '/viewall' component = {ViewAll}/>
             <Route exact path = '/subscription' component = {Subscription}/>

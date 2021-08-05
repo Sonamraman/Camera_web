@@ -67,9 +67,9 @@ const Activity = () => {
 
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
   
   return (
     <div className={classes.main}>

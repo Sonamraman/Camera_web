@@ -10,7 +10,7 @@ import { changeMode } from "../redux/action/action";
    
   const HomeCar = () => {
   
-  const isHouse = useSelector(state => state.isHouse)
+  const isHouse = useSelector(state => state.houseCar.isHouse)
   const dispatch = useDispatch()
 
   const useStyles = makeStyles((theme) => ({

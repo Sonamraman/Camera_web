@@ -22,7 +22,7 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import HomeCar from "../../component/HomeCar";
 import Addcamera from "./Addcamera";
-import DeviceNotFound from "./DeviceNotFound";
+// import DeviceNotFound from "./DeviceNotFound";
 import Sharevideo from "../Sharevideo";
 
 const tiers = [

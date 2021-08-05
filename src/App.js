@@ -1,25 +1,10 @@
 import { Provider } from 'react-redux';
 import './App.css';
+import IncDec from './pages/ReduxPractice/IncDec';
 import configStore from './redux/store/store';
-import Drawerr from './component/Drawerr';
-import HomeCar from './component/HomeCar';
-import Account from './pages/account/Account';
-import Activity from './pages/activity/Activity';
-import Changename from './pages/account/Changename';
-import Home from './pages/home/Home';
-import Login from './pages/login/Login';
-import Newdevice from './pages/device/Newdevice';
-import Share from './pages/Share';
-import Signup from './pages/Signup';
-import Subscription from './pages/Subscription/Subscription';
-import Subscription2 from './pages/Subscription/Subscription2';
-import ViewAll from './pages/VewAll';
-import CameraScreen from './pages/camera/CameraScreen';
-import Camerafullscreen from './pages/camera/Camerafullscreen';
-import Changepassword from './pages/account/Changepassword';
-import Forgetpassword from './pages/login/Forgetpassword';
-import Changepass from './pages/login/Changepass';
 import Routes from './router/routes';
+
+// store.subscribe(()=>console.log(store.getSate()))
 
 function App() {
  const store = configStore()

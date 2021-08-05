@@ -13,17 +13,15 @@ import google from "../../assest/google-button.png";
 import facebook from "../../assest/facebook-button.svg";
 import insta from "../../assest/instagram-button.svg";
 import car from "../../assest/car.jpg";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import { useHistory } from "react-router";
 import * as Validation from "../../utility/validation";
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 
 const Login = () => {
 
   // const [isHouse, setIsHouse] = useState(true);
 
-  const isHouse = useSelector(state => state.isHouse)
+  const isHouse = useSelector(state => state.houseCar.isHouse)
 
   const useStyle = makeStyles((theme) => ({
     root: {

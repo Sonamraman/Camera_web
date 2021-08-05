@@ -1,11 +1,17 @@
-import React from 'react'
+const TOKEN_KEY = 'jwt';
 
-const Auth = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+export const login = () => {
+    localStorage.setItem(TOKEN_KEY, 'TestLogin');
 }
 
-export default Auth
+export const logout = () => {
+    localStorage.removeItem(TOKEN_KEY);
+}
+
+export const isLogin = () => {
+    if (localStorage.getItem(TOKEN_KEY)) {
+        return true;
+    }
+
+    return false;
+}
